@@ -25,8 +25,8 @@
 "introduction_closet_description" = "Whatever gives you an overview of your closet, so you can keep it in order.";
 
 // MARK: Login
-"login_welcome" = "Welcome";
-"login_hello" = "Hey there.";
+"login_title" = "Hey there.";
+"login_message" = "Nice to see you again.";
 "login_action" = "Log in";
 "login_forgot_password" = "Forgot password?";
 "login_username" = "Username";

@@ -8,28 +8,38 @@
 
 import XCoordinator
 
-enum LoginRoute: Route {
+enum AuthenticationRoute: Route {
+    case introduction
     case login
+    case createAccount
 }
 
-class LoginCoordinator: NavigationCoordinator<LoginRoute> {
+class AuthenticationCoordinator: NavigationCoordinator<AuthenticationRoute> {
     override func generateRootViewController() -> UINavigationController {
-        return NavigationController()
+        return SecondaryNavigationController()
     }
     
     init() {
-        super.init(initialRoute: .login)
-        
+        super.init(initialRoute: .introduction)
         // TODO: Listen to change in authentication state to deal with session timeout and logout.
     }
     
-    override func prepareTransition(for route: LoginRoute) -> NavigationTransition {
+    override func prepareTransition(for route: AuthenticationRoute) -> NavigationTransition {
         switch route {
+        case .introduction:
+            let vc = IntroductionPageViewController()
+            let vm = IntroductionPageViewModel(router: anyRouter)
+            vc.viewModel = vm
+            return .show(vc)
+            
         case .login:
             let vc = LoginViewController()
             let vm = LoginViewModel(router: anyRouter)
             vc.viewModel = vm
-            return .show(vc)
+            return .push(vc)
+        
+        case .createAccount:
+            return .none()
         }
     }
 }
