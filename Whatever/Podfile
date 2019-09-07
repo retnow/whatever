@@ -1,0 +1,12 @@
+platform :ios, '11.0'
+use_frameworks!
+
+# Ignore all warnings from all pods.
+inhibit_all_warnings!
+
+target 'Whatever'
+pod 'RxSwift'
+pod 'RxCocoa'
+pod 'RxKeyboard'
+pod 'RxDataSources'
+pod 'XCoordinator'
