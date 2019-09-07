@@ -14,6 +14,8 @@ import UIKit
 extension UIImage {
     /// An enumeration of all image set names.
     enum name: String {
+        // Logo
+        case appLogo
         
         // Navigation bar
         case back
