@@ -11,7 +11,7 @@ import UIKit
 class Label1: UILabel {
 
     private func setup() {
-        font = ScaledFont().font(forTextStyle: .subheadline)
+        font = ScaledFont().font(forTextStyle: .headline)
         adjustsFontForContentSizeCategory = true
     }
     

@@ -1,5 +1,5 @@
 //
-//  NavigationController.swift
+//  SecondaryNavigationController.swift
 //  Whatever
 //
 //  Created by Retno Widyanti on 7/9/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NavigationController: UINavigationController {
+class SecondaryNavigationController: UINavigationController {
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -16,21 +16,16 @@ class NavigationController: UINavigationController {
     func setup() {
         navigationBar.titleTextAttributes = [
             .font: ScaledFont().font(forTextStyle: .caption1),
-            .foregroundColor: UIColor.white]
-        navigationBar.tintColor = .black
-        navigationBar.isTranslucent = false
+            .foregroundColor: UIColor(named: .text)]
+        navigationBar.tintColor = UIColor(named: .text)
+        navigationBar.isTranslucent = true
+        navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationBar.shadowImage = UIImage()
         
         // Back arrow
         let backButtonImage = UIImage(named: .back)
         navigationBar.backIndicatorImage = backButtonImage
         navigationBar.backIndicatorTransitionMaskImage = backButtonImage
-    }
-    
-    func setupAsTransparent() {
-        navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationBar.backgroundColor = .clear
-        navigationBar.isTranslucent = true
-        navigationBar.shadowImage = UIImage()
     }
     
     override func viewDidLoad() {

@@ -21,7 +21,7 @@
 		<key>fontSize</key>
 		<integer>16</integer>
 		<key>fontName</key>
-		<string>SourceSansPro-Bold</string>
+		<string>SourceSansPro-SemiBold</string>
 	</dict>
 	<key>UICTFontTextStyleTitle0</key>
 	<dict>
@@ -56,9 +56,9 @@
 	<key>UICTFontTextStyleHeadline</key>
 	<dict>
 		<key>fontSize</key>
-		<integer>20</integer>
+		<integer>18</integer>
 		<key>fontName</key>
-		<string>SourceSansPro-SemiBold</string>
+		<string>SourceSansPro-Regular</string>
 	</dict>
 	<key>UICTFontTextStyleSubhead</key>
 	<dict>

@@ -67,6 +67,7 @@ final class IntroductionPageViewController: UIPageViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Set the current view controller from page control.
         let currentViewController = orderedViewControllers[pageControl.currentPage]
         setViewControllers(
             [currentViewController],
@@ -74,6 +75,7 @@ final class IntroductionPageViewController: UIPageViewController {
             animated: true,
             completion: nil)
         
+        // Set scroll view delegate in order to prevent bounce behavior.
         for subview in view.subviews {
             if let scrollView = subview as? UIScrollView {
                 scrollView.delegate = self
@@ -81,10 +83,13 @@ final class IntroductionPageViewController: UIPageViewController {
             }
         }
         
-        setupButtons()
-        setupNavigationBar()
+        // Hide default back button text by making it an empty string
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
-        view.backgroundColor = .clear
+        // Background color
+        view.backgroundColor = UIColor(named: .background)
+        
+        setupButtons()
     }
     
     // MARK: Helper functions.
@@ -142,14 +147,6 @@ final class IntroductionPageViewController: UIPageViewController {
         createAccountButton.rx.tap
             .bind { viewModel.createAccountWasSelected() }
             .disposed(by: disposeBag)
-    }
-    
-    private func setupNavigationBar() {
-        guard let navigationBar = navigationController?.navigationBar else { return }
-        navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationBar.isTranslucent = true
-        navigationBar.backgroundColor = .clear
-        navigationBar.shadowImage = UIImage()
     }
 }
 
@@ -217,21 +214,6 @@ extension IntroductionPageViewController: UIPageViewControllerDataSource, UIPage
         }
         
         return firstViewControllerIndex
-    }
-}
-
-
-/// Implementation of navigation controller delegate methods.
-extension IntroductionPageViewController: UINavigationControllerDelegate {
-    // Format navigation bar depending on type of view controller.
-    func navigationController(
-        _ navigationController: UINavigationController,
-        willShow viewController: UIViewController,
-        animated: Bool) {
-        
-        if let navigationController = navigationController as? NavigationController {
-            navigationController.setupAsTransparent()
-        }
     }
 }
 

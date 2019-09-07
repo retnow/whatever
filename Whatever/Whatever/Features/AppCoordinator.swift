@@ -34,16 +34,16 @@ class AppCoordinator: ViewCoordinator<AppRoute> {
         switch route {
             
         case .introduction:
-            let introductionRouter = IntroductionCoordinator()
-            return .embed(introductionRouter, in: self.rootViewController)
+            let authenticationCoordinator = AuthenticationCoordinator()
+            return .embed(authenticationCoordinator, in: self.rootViewController)
             
         // TODO: Handle reauthentication for logged in existing user.
         case .login:
-            let loginRouter = LoginCoordinator().anyRouter
+            let loginRouter = AuthenticationCoordinator().anyRouter
             return .embed(loginRouter, in: self.rootViewController, style: .present)
   
         case .logout:
-            let loginRouter = LoginCoordinator().anyRouter
+            let loginRouter = AuthenticationCoordinator().anyRouter
             return .embed(loginRouter, in: self.rootViewController, style: .dismiss)
         }
     }
