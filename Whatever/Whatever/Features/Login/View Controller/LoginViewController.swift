@@ -10,26 +10,25 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-final class LoginViewController: UIViewController {
+final class LoginViewController: AppViewController {
     private let disposeBag = DisposeBag()
     
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var usernameTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var loginButton: UIButton!
-    @IBOutlet weak var forgotPasswordButton: UIButton!
+    @IBOutlet weak var titleLabel: Heading1!
+    @IBOutlet weak var messageLabel: Heading3!
+    @IBOutlet weak var usernameTextField: TextField!
+    @IBOutlet weak var passwordTextField: TextField!
+    @IBOutlet weak var loginButton: PrimaryButton!
+    @IBOutlet weak var forgotPasswordButton: TertiaryButton!
     
     var viewModel: LoginViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationController?.delegate = self
-        
         setupUI()
         bindViewModel()
     }
-    
+
     private func setupUI() {
         passwordTextField.delegate = self
         
@@ -49,9 +48,12 @@ final class LoginViewController: UIViewController {
             .disposed(by: disposeBag)
         
         // String constants
-        titleLabel.text = NSLocalizedString("login_hello", comment: "")
+        titleLabel.text = NSLocalizedString("login_title", comment: "")
+        messageLabel.text = NSLocalizedString("login_message", comment: "")
         usernameTextField.placeholder = NSLocalizedString("login_username", comment: "")
         passwordTextField.placeholder = NSLocalizedString("login_password", comment: "")
+        loginButton.setTitle(NSLocalizedString("login_action", comment: ""), for: .normal)
+        forgotPasswordButton.setTitle(NSLocalizedString("login_forgot_password", comment: ""), for: .normal)
     }
     
     private func bindViewModel() {
@@ -81,8 +83,8 @@ final class LoginViewController: UIViewController {
         switch state {
         case .initial:
             break
+        }
     }
-}
 }
 
 /// Implementation of text field delegate methods.
@@ -90,15 +92,5 @@ extension LoginViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
-    }
-}
-
-/// Implementation of navigation controller delegate methods.
-extension LoginViewController: UINavigationControllerDelegate {
-    
-    // Hide navigation bar
-    func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
-        let hide = type(of: viewController) == LoginViewController.self
-        navigationController.setNavigationBarHidden(hide, animated: true)
     }
 }
