@@ -10,11 +10,6 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="DMSerifDisplay-Regular.ttf">
-            <string>DMSerifDisplay-Regular</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
@@ -24,18 +19,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Whatever." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wcv-NG-ame">
-                                <rect key="frame" x="10" y="407" width="394" height="82.5"/>
-                                <fontDescription key="fontDescription" name="DMSerifDisplay-Regular" family="DM Serif Display" pointSize="60"/>
-                                <color key="textColor" name="textInverted"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appLogo" translatesAutoresizingMaskIntoConstraints="NO" id="9Io-dr-mJz">
+                                <rect key="frame" x="16" y="426" width="382" height="44"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" name="backgroundInverted"/>
                         <constraints>
-                            <constraint firstItem="Wcv-NG-ame" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="CCB-Ti-7qU"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Wcv-NG-ame" secondAttribute="trailing" constant="10" id="FSw-W2-SDn"/>
-                            <constraint firstItem="Wcv-NG-ame" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="WB6-v6-qfK"/>
+                            <constraint firstItem="9Io-dr-mJz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="DRa-5s-h8m"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9Io-dr-mJz" secondAttribute="trailing" constant="16" id="diM-HP-XOj"/>
+                            <constraint firstItem="9Io-dr-mJz" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="uAy-Cl-hgT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -46,11 +38,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="appLogo" width="273" height="44"/>
         <namedColor name="backgroundInverted">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="textInverted">
-            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
