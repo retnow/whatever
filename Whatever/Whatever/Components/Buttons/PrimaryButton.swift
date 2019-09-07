@@ -12,8 +12,9 @@ class PrimaryButton: UIButton {
     
     private func setup() {
         // Title label
-        titleLabel?.textColor = UIColor(named: .textInverted)
         titleLabel?.font = ScaledFont().font(forTextStyle: .callout)
+        setTitleColor(UIColor(named: .textInverted), for: .normal)
+        setTitleColor(UIColor(named: .textInverted), for: .disabled)
         
         layer.cornerRadius = 25.0
         clipsToBounds = true

@@ -20,10 +20,10 @@ final class LoginViewModel {
     lazy var state: Observable<LoginViewState> = self.stateSubject.asObservable()
     private let stateSubject = BehaviorSubject<LoginViewState>(value: .initial)
     
-    private let router: AnyRouter<LoginRoute>
+    private let router: AnyRouter<AuthenticationRoute>
     
     init(
-        router: AnyRouter<LoginRoute>) {
+        router: AnyRouter<AuthenticationRoute>) {
         self.router = router
     }
     
