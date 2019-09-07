@@ -1,0 +1,27 @@
+/* 
+  Localizable.strings
+  Whatever
+
+  Created by Retno Widyanti on 7/9/19.
+  Copyright © 2019 Retno Widyanti. All rights reserved.
+*/
+
+// MARK: General
+"app_name" = "Whatever.";
+"app_tagline" = "A closet organiser for the ensembly challenged.";
+
+"general_back" = "Back";
+"general_forward" = "Forward";
+"general_refresh" = "Refresh";
+"general_close" = "Close";
+
+// MARK: Onboarding
+"introduction_create_account" = "Create an account";
+
+// MARK: Login
+"login_welcome" = "Welcome";
+"login_hello" = "Hey there.";
+"login_action" = "Log in";
+"login_forgot_password" = "Forgot password?";
+"login_username" = "Username";
+"login_password" = "Password";
