@@ -23,17 +23,17 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="onboardingBackground" translatesAutoresizingMaskIntoConstraints="NO" id="YZx-qh-bLw">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="introductionBackground" translatesAutoresizingMaskIntoConstraints="NO" id="YZx-qh-bLw">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A closet organiser for the ensembly challenged." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jDT-E8-2nu" customClass="Heading3" customModule="Whatever" customModuleProvider="target">
-                    <rect key="frame" x="32" y="296" width="350" height="41"/>
+                    <rect key="frame" x="32" y="236" width="350" height="41"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" name="text"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Whatever." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JE5-Fr-vNc" customClass="Heading1" customModule="Whatever" customModuleProvider="target">
-                    <rect key="frame" x="32" y="244" width="350" height="36"/>
+                    <rect key="frame" x="32" y="184" width="350" height="36"/>
                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                     <color key="textColor" name="text"/>
                     <nil key="highlightedColor"/>
@@ -42,7 +42,7 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="jDT-E8-2nu" secondAttribute="trailing" constant="32" id="34u-GV-IG3"/>
-                <constraint firstItem="JE5-Fr-vNc" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="200" id="GXJ-0o-inF"/>
+                <constraint firstItem="JE5-Fr-vNc" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="140" id="GXJ-0o-inF"/>
                 <constraint firstItem="jDT-E8-2nu" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="32" id="IRL-Tc-oDF"/>
                 <constraint firstItem="JE5-Fr-vNc" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="32" id="P1V-Hc-Hff"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="JE5-Fr-vNc" secondAttribute="trailing" constant="32" id="bxo-oh-U6C"/>
@@ -57,7 +57,7 @@
         </view>
     </objects>
     <resources>
-        <image name="onboardingBackground" width="375" height="812"/>
+        <image name="introductionBackground" width="375" height="812"/>
         <namedColor name="text">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

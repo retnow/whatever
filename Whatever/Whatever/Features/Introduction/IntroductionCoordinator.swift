@@ -15,19 +15,8 @@ enum IntroductionRoute: Route {
 }
 
 class IntroductionCoordinator: NavigationCoordinator<IntroductionRoute> {
-    let superRouter: AnyRouter<AppRoute>
-    
-    override func generateRootViewController() -> UINavigationController {
-        return NavigationController()
-    }
-    
-    convenience init(superRouter: AnyRouter<AppRoute>) {
-        self.init(superRouter: superRouter, initialRoute: .introduction)
-    }
-    
-    init(superRouter: AnyRouter<AppRoute>, initialRoute: IntroductionRoute) {
-        self.superRouter = superRouter
-        super.init(initialRoute: initialRoute)
+    init() {
+        super.init(initialRoute: .introduction)
     }
     
     override func prepareTransition(for route: IntroductionRoute) -> NavigationTransition {

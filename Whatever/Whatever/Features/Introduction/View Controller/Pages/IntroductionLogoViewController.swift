@@ -21,9 +21,5 @@ class IntroductionLogoViewController: UIViewController {
         // Strings
         titleLabel.text = NSLocalizedString("app_name", comment: "")
         descriptionLabel.text = NSLocalizedString("app_tagline", comment: "")
-        
-        // Colors
-        titleLabel.textColor = UIColor(named: .text)
-        descriptionLabel.textColor = UIColor(named: .text)
     }
 }

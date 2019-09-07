@@ -27,8 +27,8 @@ class NavigationController: UINavigationController {
     }
     
     func setupAsTransparent() {
-        navigationBar.backgroundColor = .clear
         navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationBar.backgroundColor = .clear
         navigationBar.isTranslucent = true
         navigationBar.shadowImage = UIImage()
     }

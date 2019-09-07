@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="IntroductionDescriptionViewController" customModule="Whatever" customModuleProvider="target">
+            <connections>
+                <outlet property="descriptionLabel" destination="OOo-Ds-rXg" id="0xP-xl-jdy"/>
+                <outlet property="iconImageView" destination="Gwg-r5-bdE" id="6ps-M6-CxC"/>
+                <outlet property="titleLabel" destination="Flg-TV-dlL" id="u1r-In-9U9"/>
+                <outlet property="view" destination="DVu-C6-Vtf" id="jbX-lA-Wud"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="DVu-C6-Vtf">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OOo-Ds-rXg" customClass="Heading3" customModule="Whatever" customModuleProvider="target">
+                    <rect key="frame" x="32" y="246" width="350" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" name="text"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Flg-TV-dlL" customClass="Heading2" customModule="Whatever" customModuleProvider="target">
+                    <rect key="frame" x="32" y="194" width="350" height="36"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                    <color key="textColor" name="text"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gwg-r5-bdE">
+                    <rect key="frame" x="36" y="118" width="60" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="Dtv-2F-gZy"/>
+                        <constraint firstAttribute="width" constant="60" id="Yu4-bk-OgT"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="OOo-Ds-rXg" firstAttribute="top" secondItem="Flg-TV-dlL" secondAttribute="bottom" constant="16" id="38t-wt-KSZ"/>
+                <constraint firstItem="Flg-TV-dlL" firstAttribute="top" secondItem="FJD-yD-FUu" secondAttribute="top" constant="150" id="D95-hb-e4X"/>
+                <constraint firstItem="FJD-yD-FUu" firstAttribute="trailing" secondItem="Flg-TV-dlL" secondAttribute="trailing" constant="32" id="Hxo-MP-5pT"/>
+                <constraint firstItem="Flg-TV-dlL" firstAttribute="leading" secondItem="FJD-yD-FUu" secondAttribute="leading" constant="32" id="S9b-Wo-iFg"/>
+                <constraint firstItem="Flg-TV-dlL" firstAttribute="top" secondItem="Gwg-r5-bdE" secondAttribute="bottom" constant="16" id="eNt-5x-Bvp"/>
+                <constraint firstItem="OOo-Ds-rXg" firstAttribute="leading" secondItem="FJD-yD-FUu" secondAttribute="leading" constant="32" id="hxd-mM-nUJ"/>
+                <constraint firstAttribute="trailing" secondItem="OOo-Ds-rXg" secondAttribute="trailing" constant="32" id="n3I-AI-XqU"/>
+                <constraint firstItem="Gwg-r5-bdE" firstAttribute="leading" secondItem="DVu-C6-Vtf" secondAttribute="leading" constant="36" id="ysc-EY-Jre"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="FJD-yD-FUu"/>
+            <point key="canvasLocation" x="137.68115942028987" y="97.767857142857139"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="text">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
