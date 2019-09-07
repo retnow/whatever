@@ -18,8 +18,11 @@ extension UIImage {
         // Navigation bar
         case back
         
-        // Onboarding
-        case onboardingBackground
+        // Introduction
+        case introductionBackground
+        case introductionOutfit
+        case introductionLife
+        case introductionCloset
     }
     
     /** Convenience initializer that returns force unwrapped UIImage for a theme given an enumerated image

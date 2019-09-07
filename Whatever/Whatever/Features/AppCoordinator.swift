@@ -34,7 +34,7 @@ class AppCoordinator: ViewCoordinator<AppRoute> {
         switch route {
             
         case .introduction:
-            let introductionRouter = IntroductionCoordinator(superRouter: anyRouter).anyRouter
+            let introductionRouter = IntroductionCoordinator()
             return .embed(introductionRouter, in: self.rootViewController)
             
         // TODO: Handle reauthentication for logged in existing user.

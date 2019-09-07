@@ -15,8 +15,14 @@
 "general_refresh" = "Refresh";
 "general_close" = "Close";
 
-// MARK: Onboarding
+// MARK: Introduction
 "introduction_create_account" = "Create an account";
+"introduction_outfit_title" = "Today's outfit: sorted.";
+"introduction_outfit_description" = "Whatever chooses it for you.";
+"introduction_life_title" = "For any weather, to any event.";
+"introduction_life_description" = "Whatever helps you dress for your life.";
+"introduction_closet_title" = "Your closet at a glance.";
+"introduction_closet_description" = "Whatever gives you an overview of your closet, so you can keep it in order.";
 
 // MARK: Login
 "login_welcome" = "Welcome";
