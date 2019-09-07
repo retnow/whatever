@@ -7,15 +7,27 @@
 //
 
 import UIKit
+import XCoordinator
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    var window: UIWindow?
-
+    let window: UIWindow! = UIWindow()
+    
+    let coordinator = AppCoordinator()
+    var router: AnyRouter<AppRoute> {
+        return coordinator.anyRouter
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        // Set root for coordinator.
+        router.setRoot(for: window)
+        
+        for family in UIFont.familyNames.sorted() {
+            let names = UIFont.fontNames(forFamilyName: family)
+            print("Family: \(family) Font names: \(names)")
+        }
         return true
     }
 
