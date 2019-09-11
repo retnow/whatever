@@ -15,7 +15,7 @@ class IntroductionDescriptionViewController: UIViewController {
     
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var titleLabel: Heading2!
-    @IBOutlet weak var descriptionLabel: Heading3!
+    @IBOutlet weak var descriptionLabel: Caption1!
     
     init(
         title: String,
@@ -26,7 +26,8 @@ class IntroductionDescriptionViewController: UIViewController {
         self.image = image
         
         super.init(
-            nibName: String(describing: IntroductionDescriptionViewController.self),
+            nibName: String(
+                describing: IntroductionDescriptionViewController.self),
             bundle: nil)
     }
     
@@ -40,8 +41,12 @@ class IntroductionDescriptionViewController: UIViewController {
     }
     
     private func setupUI() {
-        titleLabel.text = titleText
-        descriptionLabel.text = descriptionText
+        titleLabel.setText(
+            to: titleText,
+            withLineHeightMultiple: 1.0)
+        descriptionLabel.setText(
+            to: descriptionText,
+            withLineHeightMultiple: 1.25)
         iconImageView.image = image
     }
 }
