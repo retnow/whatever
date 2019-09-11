@@ -32,7 +32,7 @@ final class LoginViewModel {
         password: String) {
     }
     
-    func forgotPassword() {
+    func forgotPasswordWasSelected() {
         
     }
 }

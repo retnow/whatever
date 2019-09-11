@@ -83,7 +83,7 @@ final class IntroductionPageViewController: UIPageViewController {
             }
         }
         
-        // Hide default back button text by making it an empty string
+        // Hide default back button text by making it an empty string.
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
         // Background color
@@ -128,7 +128,7 @@ final class IntroductionPageViewController: UIPageViewController {
         
         view.addSubview(createAccountButton)
         createAccountButton.setTitle(
-            NSLocalizedString("introduction_create_account", comment: ""),
+            NSLocalizedString("create_account_action", comment: ""),
             for: .normal)
         createAccountButton.snp.makeConstraints { make in
             make.top.equalTo(loginButton.snp.bottom).offset(16)

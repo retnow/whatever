@@ -2,19 +2,19 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UICTFontTextStyleCaption2</key>
-	<dict>
-		<key>fontSize</key>
-		<integer>16</integer>
-		<key>fontName</key>
-		<string>SourceSansPro-SemiBold</string>
-	</dict>
 	<key>UICTFontTextStyleCaption1</key>
 	<dict>
 		<key>fontSize</key>
 		<integer>20</integer>
 		<key>fontName</key>
-		<string>SourceSansPro-Bold</string>
+		<string>SourceSansPro-Regular</string>
+	</dict>
+	<key>UICTFontTextStyleCaption2</key>
+	<dict>
+		<key>fontSize</key>
+		<integer>17</integer>
+		<key>fontName</key>
+		<string>SourceSansPro-SemiBold</string>
 	</dict>
 	<key>UICTFontTextStyleCallout</key>
 	<dict>
@@ -70,7 +70,7 @@
 	<key>UICTFontTextStyleBody</key>
 	<dict>
 		<key>fontSize</key>
-		<integer>16</integer>
+		<integer>17</integer>
 		<key>fontName</key>
 		<string>SourceSansPro-Regular</string>
 	</dict>

@@ -23,6 +23,6 @@ class IntroductionPageViewModel {
     }
     
     func createAccountWasSelected() {
-        
+        router.trigger(.createAccount)
     }
 }
