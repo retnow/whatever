@@ -8,6 +8,7 @@
 
 import UIKit
 import XCoordinator
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,6 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        // Configure Firebase.
+        FirebaseApp.configure()
         
         // Set root for coordinator.
         router.setRoot(for: window)
