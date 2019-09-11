@@ -21,7 +21,7 @@ class TextField: UITextField {
     
     private func setup() {
         font = ScaledFont().font(forTextStyle: .body)
-        backgroundColor = .clear
+        backgroundColor = UIColor(named: .background)
         textColor = UIColor(named: .text)
         adjustsFontForContentSizeCategory = true
     }

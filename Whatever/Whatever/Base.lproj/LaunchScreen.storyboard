@@ -20,10 +20,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appLogo" translatesAutoresizingMaskIntoConstraints="NO" id="9Io-dr-mJz">
-                                <rect key="frame" x="16" y="426" width="382" height="44"/>
+                                <rect key="frame" x="16" y="402.5" width="382" height="91"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" name="backgroundInverted"/>
+                        <color key="backgroundColor" name="background"/>
                         <constraints>
                             <constraint firstItem="9Io-dr-mJz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="DRa-5s-h8m"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9Io-dr-mJz" secondAttribute="trailing" constant="16" id="diM-HP-XOj"/>
@@ -38,9 +38,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="appLogo" width="273" height="44"/>
-        <namedColor name="backgroundInverted">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <image name="appLogo" width="278" height="91"/>
+        <namedColor name="background">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

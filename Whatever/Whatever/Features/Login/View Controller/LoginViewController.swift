@@ -13,9 +13,11 @@ import RxCocoa
 final class LoginViewController: AppViewController {
     private let disposeBag = DisposeBag()
     
-    @IBOutlet weak var titleLabel: Heading1!
-    @IBOutlet weak var messageLabel: Heading3!
+    @IBOutlet weak var titleLabel: Heading2!
+    @IBOutlet weak var messageLabel: Body!
+    @IBOutlet weak var usernameTitleLabel: Caption2!
     @IBOutlet weak var usernameTextField: TextField!
+    @IBOutlet weak var passwordTitleLabel: Caption2!
     @IBOutlet weak var passwordTextField: TextField!
     @IBOutlet weak var loginButton: PrimaryButton!
     @IBOutlet weak var forgotPasswordButton: TertiaryButton!
@@ -50,8 +52,10 @@ final class LoginViewController: AppViewController {
         // String constants
         titleLabel.text = NSLocalizedString("login_title", comment: "")
         messageLabel.text = NSLocalizedString("login_message", comment: "")
-        usernameTextField.placeholder = NSLocalizedString("login_username", comment: "")
-        passwordTextField.placeholder = NSLocalizedString("login_password", comment: "")
+        usernameTitleLabel.text = NSLocalizedString("login_username", comment: "")
+        passwordTitleLabel.text = NSLocalizedString("login_password", comment: "")
+        usernameTextField.placeholder = NSLocalizedString("login_username_placeholder", comment: "")
+        passwordTextField.placeholder = NSLocalizedString("login_password_placeholder", comment: "")
         loginButton.setTitle(NSLocalizedString("login_action", comment: ""), for: .normal)
         forgotPasswordButton.setTitle(NSLocalizedString("login_forgot_password", comment: ""), for: .normal)
     }
