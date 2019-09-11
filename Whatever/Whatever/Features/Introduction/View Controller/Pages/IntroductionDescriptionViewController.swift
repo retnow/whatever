@@ -15,7 +15,7 @@ class IntroductionDescriptionViewController: UIViewController {
     
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var titleLabel: Heading2!
-    @IBOutlet weak var descriptionLabel: Caption1!
+    @IBOutlet weak var descriptionLabel: Body!
     
     init(
         title: String,

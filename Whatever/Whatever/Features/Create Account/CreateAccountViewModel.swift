@@ -1,8 +1,8 @@
 //
-//  LoginViewModel.swift
+//  CreateAccountViewModel.swift
 //  Whatever
 //
-//  Created by Retno Widyanti on 7/9/19.
+//  Created by Retno Widyanti on 11/9/19.
 //  Copyright © 2019 Retno Widyanti. All rights reserved.
 //
 
@@ -10,11 +10,7 @@ import XCoordinator
 import RxSwift
 import RxCocoa
 
-enum LoginViewState {
-    case initial
-}
-
-final class LoginViewModel {
+class CreateAccountViewModel {
     private let disposeBag = DisposeBag()
     
     lazy var state: Observable<LoginViewState> = self.stateSubject.asObservable()
@@ -27,12 +23,8 @@ final class LoginViewModel {
         self.router = router
     }
     
-    func attemptLogin(
-        username: String,
-        password: String) {
-    }
-    
-    func forgotPasswordWasSelected() {
-        
+    func createAccountWasSelected() {
+        // TODO: Pass in e-mail.
+        router.trigger(.verifyEmail("cher@fashionvictim.me"))
     }
 }

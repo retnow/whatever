@@ -9,7 +9,6 @@
 import UIKit
 
 class IntroductionLogoViewController: UIViewController {
-    @IBOutlet weak var titleLabel: Heading1!
     @IBOutlet weak var descriptionLabel: Heading3!
     
     override func viewDidLoad() {
@@ -19,7 +18,6 @@ class IntroductionLogoViewController: UIViewController {
     
     private func setupUI() {
         // Strings
-        titleLabel.text = NSLocalizedString("app_name", comment: "")
         descriptionLabel.text = NSLocalizedString("app_tagline", comment: "")
     }
 }

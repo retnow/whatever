@@ -16,12 +16,12 @@ extension UIImage {
     enum name: String {
         // Logo
         case appLogo
+        case brandmark
         
         // Navigation bar
         case back
         
         // Introduction
-        case introductionBackground
         case introductionOutfit
         case introductionLife
         case introductionCloset
