@@ -13,6 +13,17 @@ A view controller which overrides the preferred status bar style to match the co
 */
 class AppViewController: UIViewController {
     override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
+        return .default
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+
+        // Hide default back button text by making it an empty string.
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(
+            title: "",
+            style: .plain,
+            target: nil,
+            action: nil)
     }
 }

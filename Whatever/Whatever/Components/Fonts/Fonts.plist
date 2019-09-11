@@ -12,7 +12,7 @@
 	<key>UICTFontTextStyleCaption2</key>
 	<dict>
 		<key>fontSize</key>
-		<integer>16</integer>
+		<integer>17</integer>
 		<key>fontName</key>
 		<string>SourceSansPro-SemiBold</string>
 	</dict>
@@ -70,7 +70,7 @@
 	<key>UICTFontTextStyleBody</key>
 	<dict>
 		<key>fontSize</key>
-		<integer>16</integer>
+		<integer>17</integer>
 		<key>fontName</key>
 		<string>SourceSansPro-Regular</string>
 	</dict>

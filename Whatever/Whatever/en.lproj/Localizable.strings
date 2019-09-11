@@ -16,7 +16,6 @@
 "general_close" = "Close";
 
 // MARK: Introduction
-"introduction_create_account" = "Create an account";
 "introduction_outfit_title" = "Today's outfit: sorted.";
 "introduction_outfit_description" = "Whatever chooses it for you.";
 "introduction_life_title" = "For any weather, to any event.";
@@ -25,9 +24,28 @@
 "introduction_closet_description" = "Whatever gives you an overview of your closet, so you can keep it in order.";
 
 // MARK: Login
-"login_title" = "Hey there.";
+"login_title" = "Login.";
 "login_message" = "Nice to see you again.";
 "login_action" = "Log in";
 "login_forgot_password" = "Forgot password?";
-"login_username" = "Username";
+"login_username" = "E-mail address";
 "login_password" = "Password";
+"login_username_placeholder" = "e.g. ugh@as-if.com";
+"login_password_placeholder" = "e.g. ******";
+
+// MARK: Create an account
+"create_account_title" = "Create an account.";
+"create_account_description" = "We need to know a few things about you so we can start beautifying your closet.";
+"create_account_action" = "Create an account";
+"create_account_name_title" = "Full name";
+"create_account_name_placeholder" = "e.g. Cher Horowitz";
+"create_account_email_title" = "E-mail address";
+"create_account_email_placeholder" = "e.g. cher@fashionvictim.me";
+"create_account_password_title" = "Password";
+"create_account_password_placeholder" = "e.g. *****";
+"create_account_confirm_password_title" = "Confirm your password";
+"create_account_confirm_password_placeholder" = "e.g. *****";
+"create_account_button" = "Create account";
+"verify_email_title" = "Verify your e-mail.";
+"verify_email_message" = "You’re almost done.\n\nWe sent you an e-mail with a verification link to %@. Click on the link in that e-mail to finish setting up your account.";
+"verify_email_button" = "Continue";

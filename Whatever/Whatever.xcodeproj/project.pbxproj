@@ -36,7 +36,13 @@
 		BB622E9D23239C9000696F52 /* IntroductionPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB622E9C23239C9000696F52 /* IntroductionPageViewController.swift */; };
 		BB622E9F2323A00A00696F52 /* IntroductionLogoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB622E9E2323A00A00696F52 /* IntroductionLogoViewController.swift */; };
 		BB622EA12323A01A00696F52 /* IntroductionLogoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB622EA02323A01A00696F52 /* IntroductionLogoViewController.xib */; };
-		BB88B0DA2328F6CF00F72013 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB88B0D92328F6CF00F72013 /* GoogleService-Info.plist */; };
+		BB80CAAF232916F0005EFB00 /* Caption2.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB80CAAE232916F0005EFB00 /* Caption2.swift */; };
+		BB80CAB223291F57005EFB00 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB80CAB123291F57005EFB00 /* CreateAccountViewController.swift */; };
+		BB80CAB423291F64005EFB00 /* CreateAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB80CAB323291F64005EFB00 /* CreateAccountViewController.xib */; };
+		BB80CAB723292758005EFB00 /* VerifyEmailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB80CAB623292758005EFB00 /* VerifyEmailViewController.xib */; };
+		BB80CAB92329289B005EFB00 /* VerifyEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB80CAB82329289B005EFB00 /* VerifyEmailViewController.swift */; };
+		BB80CABB23292A79005EFB00 /* CreateAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB80CABA23292A79005EFB00 /* CreateAccountViewModel.swift */; };
+		BB88B0DD2328F93200F72013 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB88B0DC2328F93200F72013 /* GoogleService-Info.plist */; };
 		BBA41042232343AB00631E73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA41041232343AB00631E73 /* AppDelegate.swift */; };
 		BBA41049232343AE00631E73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBA41048232343AE00631E73 /* Assets.xcassets */; };
 		BBA4104C232343AE00631E73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBA4104A232343AE00631E73 /* LaunchScreen.storyboard */; };
@@ -93,7 +99,14 @@
 		BB622E9C23239C9000696F52 /* IntroductionPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionPageViewController.swift; sourceTree = "<group>"; };
 		BB622E9E2323A00A00696F52 /* IntroductionLogoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionLogoViewController.swift; sourceTree = "<group>"; };
 		BB622EA02323A01A00696F52 /* IntroductionLogoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IntroductionLogoViewController.xib; sourceTree = "<group>"; };
-		BB88B0D92328F6CF00F72013 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BB80CAAE232916F0005EFB00 /* Caption2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Caption2.swift; sourceTree = "<group>"; };
+		BB80CAB123291F57005EFB00 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		BB80CAB323291F64005EFB00 /* CreateAccountViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateAccountViewController.xib; sourceTree = "<group>"; };
+		BB80CAB623292758005EFB00 /* VerifyEmailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VerifyEmailViewController.xib; sourceTree = "<group>"; };
+		BB80CAB82329289B005EFB00 /* VerifyEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyEmailViewController.swift; sourceTree = "<group>"; };
+		BB80CABA23292A79005EFB00 /* CreateAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewModel.swift; sourceTree = "<group>"; };
+		BB88B0DB2328F8FC00F72013 /* Whatever.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Whatever.entitlements; sourceTree = "<group>"; };
+		BB88B0DC2328F93200F72013 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BBA4103E232343AB00631E73 /* Whatever.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Whatever.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBA41041232343AB00631E73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BBA41048232343AE00631E73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -247,8 +260,29 @@
 				BB2840E92323A9A800FEC5B0 /* Label1.swift */,
 				BB2840EB2323A9CF00FEC5B0 /* Label2.swift */,
 				BB28410723248ECF00FEC5B0 /* Caption1.swift */,
+				BB80CAAE232916F0005EFB00 /* Caption2.swift */,
 			);
 			path = Labels;
+			sourceTree = "<group>";
+		};
+		BB80CAB023291F37005EFB00 /* Create Account */ = {
+			isa = PBXGroup;
+			children = (
+				BB80CAB523292742005EFB00 /* Verify Email */,
+				BB80CAB323291F64005EFB00 /* CreateAccountViewController.xib */,
+				BB80CAB123291F57005EFB00 /* CreateAccountViewController.swift */,
+				BB80CABA23292A79005EFB00 /* CreateAccountViewModel.swift */,
+			);
+			path = "Create Account";
+			sourceTree = "<group>";
+		};
+		BB80CAB523292742005EFB00 /* Verify Email */ = {
+			isa = PBXGroup;
+			children = (
+				BB80CAB623292758005EFB00 /* VerifyEmailViewController.xib */,
+				BB80CAB82329289B005EFB00 /* VerifyEmailViewController.swift */,
+			);
+			path = "Verify Email";
 			sourceTree = "<group>";
 		};
 		BBA41035232343AB00631E73 = {
@@ -274,6 +308,7 @@
 		BBA41040232343AB00631E73 /* Whatever */ = {
 			isa = PBXGroup;
 			children = (
+				BB88B0DB2328F8FC00F72013 /* Whatever.entitlements */,
 				BBA410642323635300631E73 /* Features */,
 				BBA41061232361E900631E73 /* Extensions */,
 				BBA4106A2323658400631E73 /* Components */,
@@ -281,7 +316,7 @@
 				BBA41041232343AB00631E73 /* AppDelegate.swift */,
 				BBA4104A232343AE00631E73 /* LaunchScreen.storyboard */,
 				BBA4104D232343AE00631E73 /* Info.plist */,
-				BB88B0D92328F6CF00F72013 /* GoogleService-Info.plist */,
+				BB88B0DC2328F93200F72013 /* GoogleService-Info.plist */,
 				BBA41048232343AE00631E73 /* Assets.xcassets */,
 				BB2840FA2323C75F00FEC5B0 /* Localizable.strings */,
 			);
@@ -315,6 +350,7 @@
 				BBA410652323636B00631E73 /* AppCoordinator.swift */,
 				BBA410672323648100631E73 /* AppViewController.swift */,
 				BB4775B523239ACC00678E5A /* Introduction */,
+				BB80CAB023291F37005EFB00 /* Create Account */,
 				BBA410692323653700631E73 /* Login */,
 				BB28410C23248FCB00FEC5B0 /* Main */,
 			);
@@ -444,6 +480,11 @@
 				TargetAttributes = {
 					BBA4103D232343AB00631E73 = {
 						CreatedOnToolsVersion = 10.2.1;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					BBA41051232343AF00631E73 = {
 						CreatedOnToolsVersion = 10.2.1;
@@ -477,6 +518,7 @@
 			files = (
 				BBA41075232366E400631E73 /* DMSerifDisplay-Regular.ttf in Resources */,
 				BB622EA12323A01A00696F52 /* IntroductionLogoViewController.xib in Resources */,
+				BB80CAB423291F64005EFB00 /* CreateAccountViewController.xib in Resources */,
 				BBA4104C232343AE00631E73 /* LaunchScreen.storyboard in Resources */,
 				BBA4108E23236E4B00631E73 /* LoginViewController.xib in Resources */,
 				BB2840FF2323F21B00FEC5B0 /* SourceSansPro-SemiBold.ttf in Resources */,
@@ -484,11 +526,12 @@
 				BBA4106F2323665A00631E73 /* Fonts.plist in Resources */,
 				BBA41049232343AE00631E73 /* Assets.xcassets in Resources */,
 				BB2841012323F29200FEC5B0 /* SourceSansPro-Bold.ttf in Resources */,
+				BB80CAB723292758005EFB00 /* VerifyEmailViewController.xib in Resources */,
 				BB2840F72323C60800FEC5B0 /* IntroductionDescriptionViewController.xib in Resources */,
 				BB2840FD2323F21600FEC5B0 /* SourceSansPro-Regular.ttf in Resources */,
 				BB2841002323F21D00FEC5B0 /* SourceSansPro-SemiBoldItalic.ttf in Resources */,
 				BB2840FE2323F21900FEC5B0 /* SourceSansPro-RegularItalic.ttf in Resources */,
-				BB88B0DA2328F6CF00F72013 /* GoogleService-Info.plist in Resources */,
+				BB88B0DD2328F93200F72013 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -551,12 +594,14 @@
 				BB2840E22323A8E700FEC5B0 /* Heading2.swift in Sources */,
 				BB28410623248D8D00FEC5B0 /* UILabel+LineSpacing.swift in Sources */,
 				BB2840EC2323A9CF00FEC5B0 /* Label2.swift in Sources */,
+				BB80CAB223291F57005EFB00 /* CreateAccountViewController.swift in Sources */,
 				BBA410832323690B00631E73 /* LoginViewController.swift in Sources */,
 				BBA41093232372E000631E73 /* PrimaryButton.swift in Sources */,
 				BB2840EE2323ADF100FEC5B0 /* SecondaryButton.swift in Sources */,
 				BB2841042323F6A700FEC5B0 /* TextField.swift in Sources */,
 				BBA410682323648100631E73 /* AppViewController.swift in Sources */,
 				BBA410662323636B00631E73 /* AppCoordinator.swift in Sources */,
+				BB80CAAF232916F0005EFB00 /* Caption2.swift in Sources */,
 				BB4775B42323943C00678E5A /* UIView+Image.swift in Sources */,
 				BB2840F42323C4B000FEC5B0 /* IntroductionDescriptionViewController.swift in Sources */,
 				BB622E9D23239C9000696F52 /* IntroductionPageViewController.swift in Sources */,
@@ -564,6 +609,7 @@
 				BB28410E23248FE300FEC5B0 /* MainCoordinator.swift in Sources */,
 				BB28410A23248F8100FEC5B0 /* UIView+FromNib.swift in Sources */,
 				BB2841112324906B00FEC5B0 /* TabBarController.swift in Sources */,
+				BB80CAB92329289B005EFB00 /* VerifyEmailViewController.swift in Sources */,
 				BBA4108A23236AEF00631E73 /* SecondaryNavigationController.swift in Sources */,
 				BBA41042232343AB00631E73 /* AppDelegate.swift in Sources */,
 				BB2840E02323A8BC00FEC5B0 /* Heading1.swift in Sources */,
@@ -576,6 +622,7 @@
 				BB2840FC2323E76B00FEC5B0 /* TertiaryButton.swift in Sources */,
 				BB622E9F2323A00A00696F52 /* IntroductionLogoViewController.swift in Sources */,
 				BB28410823248ECF00FEC5B0 /* Caption1.swift in Sources */,
+				BB80CABB23292A79005EFB00 /* CreateAccountViewModel.swift in Sources */,
 				BB2840F02323AFAD00FEC5B0 /* IntroductionPageViewModel.swift in Sources */,
 				BBA4108C23236D0100631E73 /* UIImage+Theme.swift in Sources */,
 				BB2840E82323A98100FEC5B0 /* Body.swift in Sources */,
@@ -743,6 +790,7 @@
 			baseConfigurationReference = 4502A23CECBA22D1DB4B6972 /* Pods-Whatever.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Whatever/Whatever.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 93AB3KFHH5;
 				INFOPLIST_FILE = Whatever/Info.plist;
@@ -763,6 +811,7 @@
 			baseConfigurationReference = 0EE8043061464FB91750F245 /* Pods-Whatever.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Whatever/Whatever.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 93AB3KFHH5;
 				INFOPLIST_FILE = Whatever/Info.plist;

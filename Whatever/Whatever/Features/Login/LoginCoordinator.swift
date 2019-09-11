@@ -12,6 +12,7 @@ enum AuthenticationRoute: Route {
     case introduction
     case login
     case createAccount
+    case verifyEmail(String)
 }
 
 class AuthenticationCoordinator: NavigationCoordinator<AuthenticationRoute> {
@@ -39,7 +40,15 @@ class AuthenticationCoordinator: NavigationCoordinator<AuthenticationRoute> {
             return .push(vc)
         
         case .createAccount:
-            return .none()
+            let vc = CreateAccountViewController()
+            let vm = CreateAccountViewModel(router: anyRouter)
+            vc.viewModel = vm
+            return .push(vc)
+            
+        case .verifyEmail(let email):
+            let vc = VerifyEmailViewController(with: email)
+            // TODO: Create view model and inject.
+            return .push(vc)
         }
     }
 }
