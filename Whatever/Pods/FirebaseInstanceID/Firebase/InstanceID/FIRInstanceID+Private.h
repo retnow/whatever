@@ -19,8 +19,9 @@
 #import "FIRInstanceIDCheckinService.h"
 
 /**
- * Private API used by Firebase SDK teams by calling in reflection or internal teams.
+ * Internal API used by Firebase SDK teams by calling in reflection or internal teams.
  */
+// TODO(chliangGoogle) Rename this to Internal.
 @interface FIRInstanceID (Private)
 
 /**

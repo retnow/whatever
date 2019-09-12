@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		183B855309CAF378DC275B01 /* Pods_Whatever.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43128C2543A405FEB97FF553 /* Pods_Whatever.framework */; };
+		20647355232A207600774F3F /* AuthenticationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20647354232A207600774F3F /* AuthenticationRouter.swift */; };
 		BB2840E02323A8BC00FEC5B0 /* Heading1.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2840DF2323A8BC00FEC5B0 /* Heading1.swift */; };
 		BB2840E22323A8E700FEC5B0 /* Heading2.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2840E12323A8E700FEC5B0 /* Heading2.swift */; };
 		BB2840E42323A91700FEC5B0 /* Heading3.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2840E32323A91700FEC5B0 /* Heading3.swift */; };
@@ -74,6 +75,7 @@
 
 /* Begin PBXFileReference section */
 		0EE8043061464FB91750F245 /* Pods-Whatever.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Whatever.release.xcconfig"; path = "Target Support Files/Pods-Whatever/Pods-Whatever.release.xcconfig"; sourceTree = "<group>"; };
+		20647354232A207600774F3F /* AuthenticationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationRouter.swift; sourceTree = "<group>"; };
 		43128C2543A405FEB97FF553 /* Pods_Whatever.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Whatever.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4502A23CECBA22D1DB4B6972 /* Pods-Whatever.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Whatever.debug.xcconfig"; path = "Target Support Files/Pods-Whatever/Pods-Whatever.debug.xcconfig"; sourceTree = "<group>"; };
 		BB2840DF2323A8BC00FEC5B0 /* Heading1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Heading1.swift; sourceTree = "<group>"; };
@@ -154,6 +156,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		20647351232A1D8500774F3F /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				20647354232A207600774F3F /* AuthenticationRouter.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		3FE57ECD5B2020211FAD3713 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -319,6 +329,7 @@
 				BB88B0DC2328F93200F72013 /* GoogleService-Info.plist */,
 				BBA41048232343AE00631E73 /* Assets.xcassets */,
 				BB2840FA2323C75F00FEC5B0 /* Localizable.strings */,
+				20647351232A1D8500774F3F /* Network */,
 			);
 			path = Whatever;
 			sourceTree = "<group>";
@@ -612,6 +623,7 @@
 				BB80CAB92329289B005EFB00 /* VerifyEmailViewController.swift in Sources */,
 				BBA4108A23236AEF00631E73 /* SecondaryNavigationController.swift in Sources */,
 				BBA41042232343AB00631E73 /* AppDelegate.swift in Sources */,
+				20647355232A207600774F3F /* AuthenticationRouter.swift in Sources */,
 				BB2840E02323A8BC00FEC5B0 /* Heading1.swift in Sources */,
 				BB2840E62323A94900FEC5B0 /* Heading4.swift in Sources */,
 				BB2840E42323A91700FEC5B0 /* Heading3.swift in Sources */,
