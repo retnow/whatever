@@ -13,13 +13,13 @@ import RxCocoa
 final class VerifyEmailViewController: AppViewController {
     private let disposeBag = DisposeBag()
     
-    private let email: String
+    private let email: String?
     
     @IBOutlet weak var titleLabel: Heading2!
     @IBOutlet weak var messageLabel: Body!
     @IBOutlet weak var continueButton: PrimaryButton!
     
-    init(with email: String) {
+    init(with email: String?) {
         self.email = email
         super.init(
             nibName: String(describing: VerifyEmailViewController.self),
@@ -38,13 +38,22 @@ final class VerifyEmailViewController: AppViewController {
     }
     
     private func setupUI() {
-        // String constants
+        // String constants.
         titleLabel.text = NSLocalizedString("verify_email_title", comment: "")
-        messageLabel.setText(
-            to: String.localizedStringWithFormat(
-                NSLocalizedString("verify_email_message", comment: ""),
-                self.email),
-            withLineHeightMultiple: 1.25)
+        if let email = self.email {
+            messageLabel.setText(
+                to: String.localizedStringWithFormat(
+                    NSLocalizedString("verify_email_message", comment: ""),
+                    email),
+                withLineHeightMultiple: 1.25)
+        } else {
+            messageLabel.setText(
+                to: NSLocalizedString(
+                    "verify_email_message_no_email",
+                    comment: ""),
+                withLineHeightMultiple: 1.25)
+        }
+
         continueButton.setTitle(
             NSLocalizedString("verify_email_button", comment: ""),
             for: .normal)

@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-#import "GDTLibrary/Public/GDTAssert.h"
+#import "GDTLibrary/Private/GDTAssert.h"
 
-GDTAssertionBlock GDTAssertionBlockToRunInstead(void) {
+GDTAssertionBlock GDTAssertionBlockToRunInsteadOfNSAssert(void) {
   // This class is only compiled in by unit tests, and this should fail quickly in optimized builds.
   Class GDTAssertClass = NSClassFromString(@"GDTAssertHelper");
   if (__builtin_expect(!!GDTAssertClass, 0)) {

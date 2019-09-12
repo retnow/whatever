@@ -48,4 +48,5 @@
 "create_account_button" = "Create account";
 "verify_email_title" = "Verify your e-mail.";
 "verify_email_message" = "You’re almost done.\n\nWe sent you an e-mail with a verification link to %@. Click on the link in that e-mail to finish setting up your account.";
+"verify_email_message_no_email" = "You’re almost done.\n\nWe sent you an e-mail with a verification link. Click on the link in that e-mail to finish setting up your account.";
 "verify_email_button" = "Continue";
