@@ -26,7 +26,8 @@ final class LoginViewModel {
         router: AnyRouter<AuthenticationRoute>) {
         self.router = router
     }
-    
+
+    // TODO: Implement login with e-mail/password.
     func attemptLogin(
         username: String,
         password: String) {

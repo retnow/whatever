@@ -1,5 +1,5 @@
 //
-//  AuthenticationRouter.swift
+//  AuthenticationRepository.swift
 //  Whatever
 //
 //  Created by Widyanti, Retno (AU - Melbourne) on 12/9/19.
@@ -9,7 +9,7 @@
 import RxSwift
 import FirebaseAuth
 
-class AuthenticationRouter {
+class AuthenticationRepository {
     // Create user with an e-mail and password.
     func createUser(email: String, password: String) -> Single<AuthDataResult> {
         return Single.create { single in
@@ -27,11 +27,9 @@ class AuthenticationRouter {
     }
 
     // Sign in with e-mail and a link.
-    func signIn(email: String, link: String) -> Single<AuthDataResult> {
+    func login(email: String, link: String) -> Single<AuthDataResult> {
         return Single.create { single in
-            Auth.auth().signIn(
-                withEmail: email,
-                link: link) { auth, error in
+            Auth.auth().signIn(withEmail: email, link: link) { auth, error in
                 if let auth = auth {
                     return single(.success(auth))
                 } else if let error = error {

@@ -1,5 +1,5 @@
 //
-//  LoginCoordinator.swift
+//  AuthenticationCoordinator.swift
 //  Whatever
 //
 //  Created by Retno Widyanti on 7/9/19.
@@ -7,22 +7,25 @@
 //
 
 import XCoordinator
+import RxSwift
+import RxCocoa
 
 enum AuthenticationRoute: Route {
     case introduction
     case login
     case createAccount
-    case verifyEmail(String)
+    case verifyEmail(String?)
 }
 
 class AuthenticationCoordinator: NavigationCoordinator<AuthenticationRoute> {
+    private let disposeBag = DisposeBag()
+
     override func generateRootViewController() -> UINavigationController {
-        return SecondaryNavigationController()
+        return NavigationController()
     }
     
     init() {
         super.init(initialRoute: .introduction)
-        // TODO: Listen to change in authentication state to deal with session timeout and logout.
     }
     
     override func prepareTransition(for route: AuthenticationRoute) -> NavigationTransition {
@@ -41,7 +44,9 @@ class AuthenticationCoordinator: NavigationCoordinator<AuthenticationRoute> {
         
         case .createAccount:
             let vc = CreateAccountViewController()
-            let vm = CreateAccountViewModel(router: anyRouter)
+            let vm = CreateAccountViewModel(
+                router: anyRouter,
+                authenticationManager: AppManager.shared.authentication)
             vc.viewModel = vm
             return .push(vc)
             

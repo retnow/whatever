@@ -1,5 +1,5 @@
 //
-//  SecondaryNavigationController.swift
+//  NavigationController.swift
 //  Whatever
 //
 //  Created by Retno Widyanti on 7/9/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SecondaryNavigationController: UINavigationController {
+class NavigationController: UINavigationController {
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
