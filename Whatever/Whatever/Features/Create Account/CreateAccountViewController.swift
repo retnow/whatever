@@ -11,8 +11,8 @@ import RxSwift
 import RxCocoa
 
 final class CreateAccountViewController: AppViewController {
-     private let disposeBag = DisposeBag()
-    
+    private let disposeBag = DisposeBag()
+
     @IBOutlet weak var titleLabel: Heading2!
     @IBOutlet weak var descriptionLabel: Body!
     @IBOutlet weak var nameTitleLabel: Caption2!
@@ -24,15 +24,15 @@ final class CreateAccountViewController: AppViewController {
     @IBOutlet weak var confirmPasswordTitleLabel: Caption2!
     @IBOutlet weak var confirmPasswordTextField: TextField!
     @IBOutlet weak var createAccountButton: PrimaryButton!
-    
+
     var viewModel: CreateAccountViewModel?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         bindViewModel()
     }
-    
+
     private func setupUI() {
         // String constants
         titleLabel.text = NSLocalizedString("create_account_title", comment: "")
@@ -49,12 +49,16 @@ final class CreateAccountViewController: AppViewController {
         confirmPasswordTextField.placeholder = NSLocalizedString("create_account_confirm_password_placeholder", comment: "")
         createAccountButton.setTitle(NSLocalizedString("create_account_button", comment: ""), for: .normal)
     }
-    
+
     private func bindViewModel() {
         guard let viewModel = viewModel else { return }
-        
+
+        // TODO: Add validation to create account button.
         createAccountButton.rx.tap
-            .bind { viewModel.createAccountWasSelected() }
+            .bind { [weak self] in
+                viewModel.createAccount(
+                    email: self?.emailTextField.text ?? "",
+                    password: self?.passwordTextField.text ?? "") }
             .disposed(by: disposeBag)
     }
 }

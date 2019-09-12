@@ -16,8 +16,6 @@
 
 #import <GoogleDataTransport/GDTPlatform.h>
 
-#import <GoogleDataTransport/GDTAssert.h>
-
 const GDTBackgroundIdentifier GDTBackgroundIdentifierInvalid = 0;
 
 NSString *const kGDTApplicationDidEnterBackgroundNotification =
@@ -42,8 +40,8 @@ BOOL GDTReachabilityFlagsContainWWAN(SCNetworkReachabilityFlags flags) {
 + (void)load {
 #if TARGET_OS_IOS || TARGET_OS_TV
   // If this asserts, please file a bug at https://github.com/firebase/firebase-ios-sdk/issues.
-  GDTFatalAssert(GDTBackgroundIdentifierInvalid == UIBackgroundTaskInvalid,
-                 @"GDTBackgroundIdentifierInvalid and UIBackgroundTaskInvalid should be the same.");
+  NSAssert(GDTBackgroundIdentifierInvalid == UIBackgroundTaskInvalid,
+           @"GDTBackgroundIdentifierInvalid and UIBackgroundTaskInvalid should be the same.");
 #endif
   [self sharedApplication];
 }
