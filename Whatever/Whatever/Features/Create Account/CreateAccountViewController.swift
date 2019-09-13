@@ -57,6 +57,7 @@ final class CreateAccountViewController: AppViewController {
         createAccountButton.rx.tap
             .bind { [weak self] in
                 viewModel.createAccount(
+                    name: self?.nameTextField.text ?? "",
                     email: self?.emailTextField.text ?? "",
                     password: self?.passwordTextField.text ?? "") }
             .disposed(by: disposeBag)

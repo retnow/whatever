@@ -34,14 +34,16 @@ final class AuthenticationManager {
 
     // Network calls.
     func createUser(
+        name: String,
         email: String,
         password: String) -> Single<AuthenticationResult> {
         return authenticationRepository.createUser(
             email: email,
             password: password)
-            .map { _ -> AuthenticationResult in
-                return .success(newUser: true)
-            }
+            .flatMapCompletable({ result in
+                return self.authenticationRepository.updateProfile(
+                    displayName: name)})
+            .andThen(.just(.success(newUser: true)))
             .catchErrorJustReturn(.error)
     }
 }

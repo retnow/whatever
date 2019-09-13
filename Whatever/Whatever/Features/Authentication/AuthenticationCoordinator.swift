@@ -14,7 +14,7 @@ enum AuthenticationRoute: Route {
     case introduction
     case login
     case createAccount
-    case verifyEmail(String?)
+    case verifyEmail(String)
 }
 
 class AuthenticationCoordinator: NavigationCoordinator<AuthenticationRoute> {

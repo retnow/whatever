@@ -40,6 +40,21 @@ class AuthenticationRepository {
         }
     }
 
+    // Update user profile with display name.
+    func updateProfile(displayName: String) -> Completable {
+        return Completable.create { completable in
+            let request = Auth.auth().currentUser?.createProfileChangeRequest()
+            request?.displayName = displayName
+            request?.commitChanges { (error) in
+                guard let error = error else {
+                    return completable(.completed)
+                }
+                return completable(.error(error))
+            }
+            return Disposables.create()
+        }
+    }
+
     // Update current user.
     func updateCurrentUser(_ user: User) -> Single<Void> {
         return Single.create { single in
