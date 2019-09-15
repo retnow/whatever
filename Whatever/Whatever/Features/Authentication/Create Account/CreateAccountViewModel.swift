@@ -15,16 +15,16 @@ enum CreateAccountViewState {
     case error
 }
 
-class CreateAccountViewModel {
+final class CreateAccountViewModel {
     private let disposeBag = DisposeBag()
 
     // Variable exposing view state.
     lazy var state: Observable<CreateAccountViewState> = self.stateSubject.asObservable()
     private let stateSubject = BehaviorSubject<CreateAccountViewState>(value: .initial)
-    
+
     private let router: AnyRouter<AuthenticationRoute>
     private let authenticationManager: AuthenticationManager
-    
+
     init(
         router: AnyRouter<AuthenticationRoute>,
         authenticationManager: AuthenticationManager) {
@@ -32,19 +32,20 @@ class CreateAccountViewModel {
         self.authenticationManager = authenticationManager
     }
 
-    func createAccount(email: String, password: String) {
+    func createAccount(name: String, email: String, password: String) {
         authenticationManager.createUser(
+            name: name,
             email: email,
             password: password)
             .map { state -> CreateAccountViewState in
                 return .initial
             }
-            .catchErrorJustReturn(.error)
             .do(onSuccess: { [weak self] _ in
                 self?.router.trigger(.verifyEmail(email))
             })
+            .catchErrorJustReturn(.error)
             .asObservable()
-            .subscribe(onNext: self.stateSubject.onNext)
+            .subscribe(stateSubject)
             .disposed(by: disposeBag)
     }
 }

@@ -103,7 +103,7 @@ final class IntroductionPageViewController: UIPageViewController {
         view.addSubview(pageControl)
         
         pageControl.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(480)
+            make.top.equalToSuperview().offset(460)
             make.leading.equalToSuperview().offset(32)
             make.trailing.equalToSuperview().offset(-32)
             make.height.equalTo(15)
@@ -120,7 +120,7 @@ final class IntroductionPageViewController: UIPageViewController {
             NSLocalizedString("login_action", comment: ""),
             for: .normal)
         loginButton.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(520)
+            make.top.equalToSuperview().offset(490)
             make.leading.equalToSuperview().offset(32)
             make.trailing.equalToSuperview().offset(-32)
             make.height.equalTo(50)
@@ -141,11 +141,11 @@ final class IntroductionPageViewController: UIPageViewController {
         guard let viewModel = viewModel else { return }
         
         loginButton.rx.tap
-            .bind { viewModel.loginWasSelected() }
+            .subscribe(onNext: viewModel.loginWasSelected)
             .disposed(by: disposeBag)
         
         createAccountButton.rx.tap
-            .bind { viewModel.createAccountWasSelected() }
+            .subscribe(onNext: viewModel.createAccountWasSelected)
             .disposed(by: disposeBag)
     }
 }

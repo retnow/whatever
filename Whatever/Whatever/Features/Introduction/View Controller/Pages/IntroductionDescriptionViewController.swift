@@ -8,7 +8,7 @@
 
 import UIKit
 
-class IntroductionDescriptionViewController: UIViewController {
+class IntroductionDescriptionViewController: AppViewController {
     let titleText: String
     let descriptionText: String
     let image: UIImage

@@ -9,10 +9,12 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import RxKeyboard
 
 final class LoginViewController: AppViewController {
     private let disposeBag = DisposeBag()
     
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var titleLabel: Heading2!
     @IBOutlet weak var messageLabel: Body!
     @IBOutlet weak var usernameTitleLabel: Caption2!
@@ -32,6 +34,17 @@ final class LoginViewController: AppViewController {
     }
 
     private func setupUI() {
+        // Text fields
+        usernameTextField.delegate = self
+        passwordTextField.delegate = self
+        
+        // Scroll view
+        RxKeyboard.instance.visibleHeight
+            .drive(onNext: { [weak self] visibleKeyboardHeight in
+                self?.scrollView.contentInset.bottom = visibleKeyboardHeight
+            })
+            .disposed(by: disposeBag)
+        
         passwordTextField.delegate = self
         
         // Enable/disable sign in button based on valid username/password text fields.
@@ -64,7 +77,7 @@ final class LoginViewController: AppViewController {
         guard let viewModel = viewModel else { return }
         
         loginButton.rx.tap
-            .bind(onNext: { [weak self] in
+            .subscribe(onNext: { [weak self] in
                 guard let self = self else { return }
                 let username = self.usernameTextField.text ?? ""
                 let password = self.passwordTextField.text ?? ""
@@ -74,9 +87,13 @@ final class LoginViewController: AppViewController {
             })
             .disposed(by: disposeBag)
         
+        forgotPasswordButton.rx.tap
+            .subscribe(onNext: viewModel.forgotPasswordWasSelected)
+            .disposed(by: disposeBag)
+        
         viewModel.state
-            .subscribe(onNext: { [weak self] state in
-                self?.render(state)
+            .subscribe(onNext: { [weak self] in
+                self?.render($0)
             })
             .disposed(by: disposeBag)
     }

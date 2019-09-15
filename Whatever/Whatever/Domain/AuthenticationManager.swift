@@ -11,8 +11,8 @@ import RxCocoa
 
 enum AuthenticationResult {
     case success(newUser: Bool)
+    case emailUnverified
     case wrongCredentials
-    case accountLocked
     case error
 }
 
@@ -32,16 +32,33 @@ final class AuthenticationManager {
     // Repository.
     private let authenticationRepository = AuthenticationRepository()
 
-    // Network calls.
+    // MARK: Network calls.
     func createUser(
+        name: String,
         email: String,
         password: String) -> Single<AuthenticationResult> {
         return authenticationRepository.createUser(
             email: email,
             password: password)
-            .map { _ -> AuthenticationResult in
-                return .success(newUser: true)
-            }
+            .flatMapCompletable({ result in
+                return self.authenticationRepository.updateProfile(
+                    displayName: name)})
+            .andThen(.just(.success(newUser: true)))
             .catchErrorJustReturn(.error)
+    }
+    
+    func login(
+        email: String,
+        password: String) -> Single<AuthenticationResult> {
+        return authenticationRepository.login(
+            email: email,
+            password: password)
+            .flatMap { auth in
+                if auth.user.isEmailVerified {
+                    return .just(.success(newUser: true))
+                }
+                return .just(.emailUnverified)
+            }
+            .catchErrorJustReturn(.wrongCredentials)
     }
 }
