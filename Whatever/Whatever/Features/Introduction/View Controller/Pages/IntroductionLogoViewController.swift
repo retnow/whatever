@@ -8,7 +8,7 @@
 
 import UIKit
 
-class IntroductionLogoViewController: UIViewController {
+class IntroductionLogoViewController: AppViewController {
     @IBOutlet weak var descriptionLabel: Heading3!
     
     override func viewDidLoad() {

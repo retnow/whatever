@@ -15,7 +15,7 @@ enum CreateAccountViewState {
     case error
 }
 
-class CreateAccountViewModel {
+final class CreateAccountViewModel {
     private let disposeBag = DisposeBag()
 
     // Variable exposing view state.

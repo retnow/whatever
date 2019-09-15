@@ -9,10 +9,12 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import RxKeyboard
 
 final class CreateAccountViewController: AppViewController {
     private let disposeBag = DisposeBag()
 
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var titleLabel: Heading2!
     @IBOutlet weak var descriptionLabel: Body!
     @IBOutlet weak var nameTitleLabel: Caption2!
@@ -34,6 +36,19 @@ final class CreateAccountViewController: AppViewController {
     }
 
     private func setupUI() {
+        // Text fields
+        nameTextField.delegate = self
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+        confirmPasswordTextField.delegate = self
+        
+        // Scroll view
+        RxKeyboard.instance.visibleHeight
+            .drive(onNext: { [weak self] visibleKeyboardHeight in
+                self?.scrollView.contentInset.bottom = visibleKeyboardHeight
+            })
+            .disposed(by: disposeBag)
+        
         // String constants
         titleLabel.text = NSLocalizedString("create_account_title", comment: "")
         descriptionLabel.setText(
@@ -55,11 +70,20 @@ final class CreateAccountViewController: AppViewController {
 
         // TODO: Add validation to create account button.
         createAccountButton.rx.tap
-            .bind { [weak self] in
+            .subscribe(onNext: { [weak self] in
                 viewModel.createAccount(
                     name: self?.nameTextField.text ?? "",
                     email: self?.emailTextField.text ?? "",
-                    password: self?.passwordTextField.text ?? "") }
+                    password: self?.passwordTextField.text ?? "") })
             .disposed(by: disposeBag)
     }
 }
+
+/// Implementation of text field delegate methods.
+extension CreateAccountViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+}
+
