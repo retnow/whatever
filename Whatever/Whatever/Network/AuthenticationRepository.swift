@@ -10,8 +10,11 @@ import RxSwift
 import FirebaseAuth
 
 class AuthenticationRepository {
+    // MARK: Create account
     // Create user with an e-mail and password.
-    func createUser(email: String, password: String) -> Single<AuthDataResult> {
+    public func createUser(
+        email: String,
+        password: String) -> Single<AuthDataResult> {
         return Single.create { single in
             Auth.auth().createUser(
                 withEmail: email,
@@ -26,22 +29,55 @@ class AuthenticationRepository {
         }
     }
 
-    // Sign in with e-mail and a link.
-    func login(email: String, link: String) -> Single<AuthDataResult> {
+    // Send verification e-mail.
+    public func sendVerificationEmail() -> Completable {
+        return Completable.create { completable in
+            Auth.auth().currentUser?.sendEmailVerification() { error in
+                guard let error = error else {
+                    return completable(.completed)
+                }
+                return completable(.error(error))
+            }
+            return Disposables.create()
+        }
+    }
+    
+    // MARK: Login
+    public func login(
+        email: String,
+        password: String) -> Single<AuthDataResult> {
         return Single.create { single in
-            Auth.auth().signIn(withEmail: email, link: link) { auth, error in
-                if let auth = auth {
-                    return single(.success(auth))
-                } else if let error = error {
+            Auth.auth().signIn(
+            withEmail: email,
+            password: password) { auth, error in
+                if let error = error {
                     return single(.error(error))
+                } else if let auth = auth {
+                    return single(.success(auth))
                 }
             }
             return Disposables.create()
         }
     }
 
+    // MARK: Update account
+    // Update user profile with display name.
+    public func updateProfile(displayName: String) -> Completable {
+        return Completable.create { completable in
+            let request = Auth.auth().currentUser?.createProfileChangeRequest()
+            request?.displayName = displayName
+            request?.commitChanges { (error) in
+                guard let error = error else {
+                    return completable(.completed)
+                }
+                return completable(.error(error))
+            }
+            return Disposables.create()
+        }
+    }
+
     // Update current user.
-    func updateCurrentUser(_ user: User) -> Single<Void> {
+    public func updateCurrentUser(_ user: User) -> Single<Void> {
         return Single.create { single in
             Auth.auth().updateCurrentUser(user) { error in
                 guard let error = error else {

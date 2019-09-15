@@ -14,7 +14,9 @@ enum AuthenticationRoute: Route {
     case introduction
     case login
     case createAccount
-    case verifyEmail(String?)
+    case verifyEmail(String)
+    case forgotPassword
+    case popToLogin
 }
 
 class AuthenticationCoordinator: NavigationCoordinator<AuthenticationRoute> {
@@ -54,6 +56,22 @@ class AuthenticationCoordinator: NavigationCoordinator<AuthenticationRoute> {
             let vc = VerifyEmailViewController(with: email)
             // TODO: Create view model and inject.
             return .push(vc)
+        
+        case .forgotPassword:
+            let vc = ForgotPasswordViewController()
+            let vm = ForgotPasswordViewModel(
+                router: anyRouter,
+                authenticationManager: AppManager.shared.authentication)
+            vc.viewModel = vm
+            return .push(vc)
+            
+        case .popToLogin:
+            for vc in self.rootViewController.viewControllers {
+                if let vc = vc as? LoginViewController {
+                    return .pop(to: vc)
+                }
+            }
+            return .popToRoot()
         }
     }
 }

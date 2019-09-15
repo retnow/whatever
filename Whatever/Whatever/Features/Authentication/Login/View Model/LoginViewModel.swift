@@ -34,6 +34,6 @@ final class LoginViewModel {
     }
     
     func forgotPasswordWasSelected() {
-        
+        router.trigger(.forgotPassword)
     }
 }

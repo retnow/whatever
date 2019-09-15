@@ -10,7 +10,7 @@ import XCoordinator
 import RxSwift
 import RxCocoa
 
-class IntroductionPageViewModel {
+final class IntroductionPageViewModel {
     let router: AnyRouter<AuthenticationRoute>
     
     init(router: AnyRouter<AuthenticationRoute>) {

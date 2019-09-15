@@ -25,19 +25,19 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Verify your e-mail." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u9a-WR-mpb" customClass="Heading2" customModule="Whatever" customModuleProvider="target">
-                    <rect key="frame" x="32" y="184" width="350" height="31.5"/>
+                    <rect key="frame" x="32" y="154" width="350" height="31.5"/>
                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You're almost done." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qms-az-lKQ" customClass="Body" customModule="Whatever" customModuleProvider="target">
-                    <rect key="frame" x="32" y="231.5" width="350" height="20.5"/>
+                    <rect key="frame" x="32" y="201.5" width="350" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yez-yJ-vBw" customClass="PrimaryButton" customModule="Whatever" customModuleProvider="target">
-                    <rect key="frame" x="32" y="533" width="350" height="50"/>
+                    <rect key="frame" x="32" y="490" width="350" height="50"/>
                     <color key="backgroundColor" name="button"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="66K-8O-BfK"/>
@@ -53,8 +53,8 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="yez-yJ-vBw" secondAttribute="trailing" constant="32" id="CS6-G9-qmN"/>
                 <constraint firstItem="yez-yJ-vBw" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="32" id="E8T-Bc-KDz"/>
                 <constraint firstItem="yez-yJ-vBw" firstAttribute="top" relation="greaterThanOrEqual" secondItem="qms-az-lKQ" secondAttribute="bottom" constant="32" id="M5c-5h-wOi"/>
-                <constraint firstItem="yez-yJ-vBw" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" priority="750" constant="489" id="WRo-3x-j6N"/>
-                <constraint firstItem="u9a-WR-mpb" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="140" id="Xl1-OX-MsI"/>
+                <constraint firstItem="yez-yJ-vBw" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" priority="750" constant="490" id="WRo-3x-j6N"/>
+                <constraint firstItem="u9a-WR-mpb" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="110" id="Xl1-OX-MsI"/>
                 <constraint firstItem="qms-az-lKQ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="32" id="f4w-rg-akV"/>
                 <constraint firstItem="qms-az-lKQ" firstAttribute="top" secondItem="u9a-WR-mpb" secondAttribute="bottom" constant="16" id="rPA-Ki-Zbv"/>
                 <constraint firstItem="u9a-WR-mpb" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="32" id="xa8-Ix-zRV"/>

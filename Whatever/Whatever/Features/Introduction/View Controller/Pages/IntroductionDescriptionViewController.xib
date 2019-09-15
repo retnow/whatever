@@ -25,19 +25,19 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OOo-Ds-rXg" customClass="Body" customModule="Whatever" customModuleProvider="target">
-                    <rect key="frame" x="32" y="236" width="350" height="20.5"/>
+                    <rect key="frame" x="32" y="206" width="350" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" name="text"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Flg-TV-dlL" customClass="Heading2" customModule="Whatever" customModuleProvider="target">
-                    <rect key="frame" x="32" y="184" width="350" height="36"/>
+                    <rect key="frame" x="32" y="154" width="350" height="36"/>
                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                     <color key="textColor" name="text"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gwg-r5-bdE">
-                    <rect key="frame" x="36" y="108" width="60" height="60"/>
+                    <rect key="frame" x="36" y="78" width="60" height="60"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="60" id="Dtv-2F-gZy"/>
                         <constraint firstAttribute="width" constant="60" id="Yu4-bk-OgT"/>
@@ -47,7 +47,7 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="OOo-Ds-rXg" firstAttribute="top" secondItem="Flg-TV-dlL" secondAttribute="bottom" constant="16" id="38t-wt-KSZ"/>
-                <constraint firstItem="Flg-TV-dlL" firstAttribute="top" secondItem="FJD-yD-FUu" secondAttribute="top" constant="140" id="D95-hb-e4X"/>
+                <constraint firstItem="Flg-TV-dlL" firstAttribute="top" secondItem="FJD-yD-FUu" secondAttribute="top" constant="110" id="D95-hb-e4X"/>
                 <constraint firstItem="FJD-yD-FUu" firstAttribute="trailing" secondItem="Flg-TV-dlL" secondAttribute="trailing" constant="32" id="Hxo-MP-5pT"/>
                 <constraint firstItem="Flg-TV-dlL" firstAttribute="leading" secondItem="FJD-yD-FUu" secondAttribute="leading" constant="32" id="S9b-Wo-iFg"/>
                 <constraint firstItem="Flg-TV-dlL" firstAttribute="top" secondItem="Gwg-r5-bdE" secondAttribute="bottom" constant="16" id="eNt-5x-Bvp"/>
