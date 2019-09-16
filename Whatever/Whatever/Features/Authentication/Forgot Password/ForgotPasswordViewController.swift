@@ -13,7 +13,7 @@ import RxKeyboard
 
 final class ForgotPasswordViewController: AppViewController {
     private let disposeBag = DisposeBag()
-    
+
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var titleLabel: Heading2!
     @IBOutlet weak var descriptionLabel: Body!
@@ -21,27 +21,27 @@ final class ForgotPasswordViewController: AppViewController {
     @IBOutlet weak var emailTextField: TextField!
     @IBOutlet weak var resetPasswordButton: PrimaryButton!
     @IBOutlet weak var backToLoginButton: TertiaryButton!
-    
+
     var viewModel: ForgotPasswordViewModel?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         setupUI()
         bindViewModel()
     }
-    
+
     private func setupUI() {
         // Text fields
         emailTextField.delegate = self
-        
+
         // Scroll view
         RxKeyboard.instance.visibleHeight
             .drive(onNext: { [weak self] visibleKeyboardHeight in
                 self?.scrollView.contentInset.bottom = visibleKeyboardHeight
             })
             .disposed(by: disposeBag)
-        
+
         // String constants
         titleLabel.text = NSLocalizedString(
             "forgot_password_title", comment: "")
@@ -55,19 +55,23 @@ final class ForgotPasswordViewController: AppViewController {
             NSLocalizedString("forgot_password_back", comment: ""),
             for: .normal)
     }
-    
+
     private func bindViewModel() {
         guard let viewModel = viewModel else { return }
-        
+
         resetPasswordButton.rx.tap
-            .subscribe(onNext: viewModel.resetPasswordSelected)
+            .subscribe(onNext: { [weak self] in
+                guard let self = self else { return }
+                let email = self.emailTextField.text ?? ""
+                viewModel.resetPasswordSelected(email: email)
+            })
             .disposed(by: disposeBag)
-        
+
         backToLoginButton.rx.tap
             .subscribe(onNext: viewModel.backToLoginSelected)
             .disposed(by: disposeBag)
     }
-    
+
     // Render correct elements depending on current state.
     // TODO: Fill this in when different view states are required.
     private func render(_ state: LoginViewState) {

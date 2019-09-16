@@ -16,6 +16,7 @@ extension UIColor {
     enum name: String {
         // States
         case disabled
+        case error
         
         // Background
         case background

@@ -19,12 +19,16 @@ final class CreateAccountViewController: AppViewController {
     @IBOutlet weak var descriptionLabel: Body!
     @IBOutlet weak var nameTitleLabel: Caption2!
     @IBOutlet weak var nameTextField: TextField!
+    @IBOutlet weak var nameValidationLabel: Label2!
     @IBOutlet weak var emailTitleLabel: Caption2!
     @IBOutlet weak var emailTextField: TextField!
+    @IBOutlet weak var emailValidationLabel: Label2!
     @IBOutlet weak var passwordTitleLabel: Caption2!
     @IBOutlet weak var passwordTextField: TextField!
+    @IBOutlet weak var passwordValidationLabel: Label2!
     @IBOutlet weak var confirmPasswordTitleLabel: Caption2!
     @IBOutlet weak var confirmPasswordTextField: TextField!
+    @IBOutlet weak var confirmPasswordValidationLabel: Label2!
     @IBOutlet weak var createAccountButton: PrimaryButton!
 
     var viewModel: CreateAccountViewModel?
@@ -68,7 +72,29 @@ final class CreateAccountViewController: AppViewController {
     private func bindViewModel() {
         guard let viewModel = viewModel else { return }
 
-        // TODO: Add validation to create account button.
+        // Validate text fields.
+        nameTextField.rx.text.orEmpty
+            .map { viewModel.validateName($0) }
+            .bind(to: nameValidationLabel.rx.text)
+            .disposed(by: disposeBag)
+
+        emailTextField.rx.text.orEmpty
+            .map { viewModel.validateEmail($0) }
+            .bind(to: emailValidationLabel.rx.text)
+            .disposed(by: disposeBag)
+
+        passwordTextField.rx.text.orEmpty
+            .map { viewModel.validatePassword($0) }
+            .bind(to: passwordValidationLabel.rx.text)
+            .disposed(by: disposeBag)
+
+        Observable.combineLatest(
+            passwordTextField.rx.text.orEmpty,
+            confirmPasswordTextField.rx.text.orEmpty)
+            .map { viewModel.validateMatchingPasswords($0, $1) }
+            .bind(to: confirmPasswordValidationLabel.rx.text)
+            .disposed(by: disposeBag)
+
         createAccountButton.rx.tap
             .subscribe(onNext: { [weak self] in
                 viewModel.createAccount(

@@ -53,8 +53,12 @@ class AuthenticationCoordinator: NavigationCoordinator<AuthenticationRoute> {
             return .push(vc)
             
         case .verifyEmail(let email):
-            let vc = VerifyEmailViewController(with: email)
-            // TODO: Create view model and inject.
+            let vc = VerifyEmailViewController()
+            let vm = VerifyEmailViewModel(
+                email: email,
+                router: anyRouter,
+                authenticationManager: AppManager.shared.authentication)
+            vc.viewModel = vm
             return .push(vc)
         
         case .forgotPassword:

@@ -15,14 +15,18 @@
             <connections>
                 <outlet property="confirmPasswordTextField" destination="k1R-8f-KVD" id="hXf-GZ-VIS"/>
                 <outlet property="confirmPasswordTitleLabel" destination="l1a-v7-H7m" id="H09-FR-Jr4"/>
+                <outlet property="confirmPasswordValidationLabel" destination="uKG-NO-2vb" id="kzo-SE-aUP"/>
                 <outlet property="createAccountButton" destination="Ck9-l5-z0q" id="gnb-R8-NYB"/>
                 <outlet property="descriptionLabel" destination="YZA-Uq-fyw" id="Rnv-Ww-6P4"/>
                 <outlet property="emailTextField" destination="98b-DZ-HFb" id="Gwd-7G-Kpu"/>
                 <outlet property="emailTitleLabel" destination="v0W-Yb-vJx" id="0Ck-GV-XDj"/>
+                <outlet property="emailValidationLabel" destination="S8A-mA-StM" id="tSB-VH-J41"/>
                 <outlet property="nameTextField" destination="gyZ-u6-Veg" id="Ubf-9j-VhB"/>
                 <outlet property="nameTitleLabel" destination="loC-h7-yHh" id="stW-VC-mwj"/>
+                <outlet property="nameValidationLabel" destination="qC0-wy-Gyp" id="Ijo-mg-PT6"/>
                 <outlet property="passwordTextField" destination="8qZ-y9-FmX" id="byi-jN-F7P"/>
                 <outlet property="passwordTitleLabel" destination="I8F-Yx-lm7" id="JbN-QO-LHx"/>
+                <outlet property="passwordValidationLabel" destination="igh-6o-yiJ" id="sE9-tU-oUG"/>
                 <outlet property="scrollView" destination="pru-4f-DwY" id="Vug-aD-qvB"/>
                 <outlet property="titleLabel" destination="RTu-Nk-0FV" id="7z9-0I-0bo"/>
                 <outlet property="view" destination="iN0-l3-epB" id="ISL-8y-H54"/>
@@ -37,7 +41,7 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kcf-SO-xfN">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="642"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="656"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create an account." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RTu-Nk-0FV" customClass="Heading2" customModule="Whatever" customModuleProvider="target">
                                     <rect key="frame" x="32" y="110" width="350" height="31.5"/>
@@ -58,7 +62,7 @@
                                     <textInputTraits key="textInputTraits" textContentType="username"/>
                                 </textField>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="e.g. juniper@berry.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="98b-DZ-HFb" customClass="TextField" customModule="Whatever" customModuleProvider="target">
-                                    <rect key="frame" x="32" y="326" width="350" height="20"/>
+                                    <rect key="frame" x="32" y="325.5" width="350" height="20"/>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                     <textInputTraits key="textInputTraits" textContentType="email"/>
@@ -70,37 +74,37 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-mail" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v0W-Yb-vJx" customClass="Caption2" customModule="Whatever" customModuleProvider="target">
-                                    <rect key="frame" x="32" y="297.5" width="350" height="20.5"/>
+                                    <rect key="frame" x="32" y="297" width="350" height="20.5"/>
                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="e.g. *****" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8qZ-y9-FmX" customClass="TextField" customModule="Whatever" customModuleProvider="target">
-                                    <rect key="frame" x="32" y="413.5" width="350" height="20"/>
+                                    <rect key="frame" x="32" y="412.5" width="350" height="20"/>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                     <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                 </textField>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I8F-Yx-lm7" customClass="Caption2" customModule="Whatever" customModuleProvider="target">
-                                    <rect key="frame" x="32" y="385" width="350" height="20.5"/>
+                                    <rect key="frame" x="32" y="384" width="350" height="20.5"/>
                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="e.g. *****" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k1R-8f-KVD" customClass="TextField" customModule="Whatever" customModuleProvider="target">
-                                    <rect key="frame" x="32" y="501" width="350" height="20"/>
+                                    <rect key="frame" x="32" y="499.5" width="350" height="20"/>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                     <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                 </textField>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm your password" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l1a-v7-H7m" customClass="Caption2" customModule="Whatever" customModuleProvider="target">
-                                    <rect key="frame" x="32" y="472.5" width="350" height="20.5"/>
+                                    <rect key="frame" x="32" y="471" width="350" height="20.5"/>
                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ck9-l5-z0q" customClass="PrimaryButton" customModule="Whatever" customModuleProvider="target">
-                                    <rect key="frame" x="32" y="560" width="350" height="50"/>
+                                    <rect key="frame" x="32" y="574" width="350" height="50"/>
                                     <color key="backgroundColor" name="button"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="0lQ-sb-w1M"/>
@@ -108,28 +112,28 @@
                                     <color key="tintColor" name="textInverted"/>
                                     <state key="normal" title="Create account"/>
                                 </button>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qC0-wy-Gyp" userLabel="Name Error Label">
-                                    <rect key="frame" x="32" y="266.5" width="350" height="15"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qC0-wy-Gyp" userLabel="Name Error Label" customClass="Label2" customModule="Whatever" customModuleProvider="target">
+                                    <rect key="frame" x="32" y="266.5" width="350" height="14.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                    <nil key="textColor"/>
+                                    <color key="textColor" name="error"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S8A-mA-StM" userLabel="Email Error Label">
-                                    <rect key="frame" x="32" y="354" width="350" height="15"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S8A-mA-StM" userLabel="Email Error Label" customClass="Label2" customModule="Whatever" customModuleProvider="target">
+                                    <rect key="frame" x="32" y="353.5" width="350" height="14.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                    <nil key="textColor"/>
+                                    <color key="textColor" name="error"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="igh-6o-yiJ" userLabel="Password Error Label">
-                                    <rect key="frame" x="0.0" y="441.5" width="414" height="15"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="igh-6o-yiJ" userLabel="Password Error Label" customClass="Label2" customModule="Whatever" customModuleProvider="target">
+                                    <rect key="frame" x="32" y="440.5" width="350" height="14.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                    <nil key="textColor"/>
+                                    <color key="textColor" name="error"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uKG-NO-2vb" userLabel="Confirm Password Error Label">
-                                    <rect key="frame" x="0.0" y="529" width="414" height="15"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uKG-NO-2vb" userLabel="Confirm Password Error Label" customClass="Label2" customModule="Whatever" customModuleProvider="target">
+                                    <rect key="frame" x="32" y="527.5" width="350" height="14.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                    <nil key="textColor"/>
+                                    <color key="textColor" name="error"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
@@ -140,11 +144,11 @@
                                 <constraint firstAttribute="trailing" secondItem="k1R-8f-KVD" secondAttribute="trailing" constant="32" id="5qb-h9-JSc"/>
                                 <constraint firstAttribute="trailing" secondItem="8qZ-y9-FmX" secondAttribute="trailing" constant="32" id="6l4-IV-rQj"/>
                                 <constraint firstAttribute="trailing" secondItem="Ck9-l5-z0q" secondAttribute="trailing" constant="32" id="98H-dt-P27"/>
-                                <constraint firstItem="Ck9-l5-z0q" firstAttribute="top" secondItem="uKG-NO-2vb" secondAttribute="bottom" constant="16" id="Am7-26-yqx"/>
+                                <constraint firstItem="Ck9-l5-z0q" firstAttribute="top" secondItem="uKG-NO-2vb" secondAttribute="bottom" constant="32" id="Am7-26-yqx"/>
                                 <constraint firstItem="qC0-wy-Gyp" firstAttribute="top" secondItem="gyZ-u6-Veg" secondAttribute="bottom" constant="8" id="Bk8-6F-Ylq"/>
                                 <constraint firstAttribute="trailing" secondItem="l1a-v7-H7m" secondAttribute="trailing" constant="32" id="Bp1-gF-sYJ"/>
-                                <constraint firstItem="uKG-NO-2vb" firstAttribute="leading" secondItem="kcf-SO-xfN" secondAttribute="leading" id="GDn-Wx-JZG"/>
-                                <constraint firstAttribute="trailing" secondItem="igh-6o-yiJ" secondAttribute="trailing" id="HOT-jF-wtt"/>
+                                <constraint firstItem="uKG-NO-2vb" firstAttribute="leading" secondItem="kcf-SO-xfN" secondAttribute="leading" constant="32" id="GDn-Wx-JZG"/>
+                                <constraint firstAttribute="trailing" secondItem="igh-6o-yiJ" secondAttribute="trailing" constant="32" id="HOT-jF-wtt"/>
                                 <constraint firstAttribute="trailing" secondItem="gyZ-u6-Veg" secondAttribute="trailing" constant="32" id="IWp-IS-H0y"/>
                                 <constraint firstItem="8qZ-y9-FmX" firstAttribute="top" secondItem="I8F-Yx-lm7" secondAttribute="bottom" constant="8" id="J19-1S-Rqe"/>
                                 <constraint firstItem="loC-h7-yHh" firstAttribute="leading" secondItem="kcf-SO-xfN" secondAttribute="leading" constant="32" id="J7k-Gw-7un"/>
@@ -159,13 +163,13 @@
                                 <constraint firstItem="gyZ-u6-Veg" firstAttribute="leading" secondItem="kcf-SO-xfN" secondAttribute="leading" constant="32" id="RsQ-HU-Taw"/>
                                 <constraint firstItem="l1a-v7-H7m" firstAttribute="leading" secondItem="kcf-SO-xfN" secondAttribute="leading" constant="32" id="SOD-H5-oBT"/>
                                 <constraint firstAttribute="trailing" secondItem="RTu-Nk-0FV" secondAttribute="trailing" constant="32" id="TGe-xY-h2h"/>
-                                <constraint firstAttribute="trailing" secondItem="uKG-NO-2vb" secondAttribute="trailing" id="TOQ-gi-30b"/>
+                                <constraint firstAttribute="trailing" secondItem="uKG-NO-2vb" secondAttribute="trailing" constant="32" id="TOQ-gi-30b"/>
                                 <constraint firstItem="gyZ-u6-Veg" firstAttribute="top" secondItem="loC-h7-yHh" secondAttribute="bottom" constant="8" id="UMC-GX-xAV"/>
                                 <constraint firstItem="S8A-mA-StM" firstAttribute="leading" secondItem="kcf-SO-xfN" secondAttribute="leading" constant="32" id="Wco-Kj-SdO"/>
                                 <constraint firstAttribute="trailing" secondItem="I8F-Yx-lm7" secondAttribute="trailing" constant="32" id="Y1W-R6-pwE"/>
                                 <constraint firstItem="8qZ-y9-FmX" firstAttribute="leading" secondItem="kcf-SO-xfN" secondAttribute="leading" constant="32" id="b98-zR-zfR"/>
                                 <constraint firstItem="98b-DZ-HFb" firstAttribute="leading" secondItem="kcf-SO-xfN" secondAttribute="leading" constant="32" id="cnh-WC-lOG"/>
-                                <constraint firstItem="igh-6o-yiJ" firstAttribute="leading" secondItem="kcf-SO-xfN" secondAttribute="leading" id="d6g-dj-O27"/>
+                                <constraint firstItem="igh-6o-yiJ" firstAttribute="leading" secondItem="kcf-SO-xfN" secondAttribute="leading" constant="32" id="d6g-dj-O27"/>
                                 <constraint firstItem="S8A-mA-StM" firstAttribute="top" secondItem="98b-DZ-HFb" secondAttribute="bottom" constant="8" id="dwi-rk-dz7"/>
                                 <constraint firstItem="uKG-NO-2vb" firstAttribute="top" secondItem="k1R-8f-KVD" secondAttribute="bottom" constant="8" id="gfc-1T-bnc"/>
                                 <constraint firstItem="RTu-Nk-0FV" firstAttribute="top" secondItem="kcf-SO-xfN" secondAttribute="top" constant="110" id="hhP-T0-Am8"/>
@@ -207,6 +211,9 @@
     <resources>
         <namedColor name="button">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="error">
+            <color red="0.62745098039215685" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="textInverted">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

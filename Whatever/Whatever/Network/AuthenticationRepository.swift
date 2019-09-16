@@ -77,13 +77,26 @@ class AuthenticationRepository {
     }
 
     // Update current user.
-    public func updateCurrentUser(_ user: User) -> Single<Void> {
-        return Single.create { single in
+    public func updateCurrentUser(_ user: User) -> Completable {
+        return Completable.create { completable in
             Auth.auth().updateCurrentUser(user) { error in
                 guard let error = error else {
-                    return single(.success(()))
+                    return completable(.completed)
                 }
-                single(.error(error))
+                completable(.error(error))
+            }
+            return Disposables.create()
+        }
+    }
+
+    // MARK: Password reset
+    public func sendPasswordReset(email: String) -> Completable {
+        return Completable.create { completable in
+            Auth.auth().sendPasswordReset(withEmail: email) { error in
+                guard let error = error else {
+                    return completable(.completed)
+                }
+                completable(.error(error))
             }
             return Disposables.create()
         }
