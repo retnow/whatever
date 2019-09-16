@@ -23,8 +23,10 @@ final class ForgotPasswordViewModel {
         self.authenticationManager = authenticationManager
     }
     
-    func resetPasswordSelected() {
-        // TODO: Implement reset password functionality.
+    func resetPasswordSelected(email: String) {
+        authenticationManager.sendPasswordReset(to: email)
+            .subscribe()
+            .disposed(by: disposeBag)
     }
     
     func backToLoginSelected() {

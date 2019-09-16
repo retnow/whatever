@@ -54,9 +54,9 @@ class AppCoordinator: ViewCoordinator<AppRoute> {
 
         // TODO: Handle reauthentication for logged in existing user.
         case .login:
-            let loginRouter = AuthenticationCoordinator().anyRouter
+            let mainRouter = MainCoordinator().anyRouter
             return .embed(
-                loginRouter,
+                mainRouter,
                 in: self.rootViewController,
                 style: .present)
 

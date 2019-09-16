@@ -13,40 +13,52 @@ import RxCocoa
 final class VerifyEmailViewController: AppViewController {
     private let disposeBag = DisposeBag()
     
-    private let email: String
-    
     @IBOutlet weak var titleLabel: Heading2!
     @IBOutlet weak var messageLabel: Body!
     @IBOutlet weak var continueButton: PrimaryButton!
-    
-    init(with email: String) {
-        self.email = email
-        super.init(
-            nibName: String(describing: VerifyEmailViewController.self),
-            bundle: nil)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+
+    var viewModel: VerifyEmailViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        
-        // TODO: Bind view model.
+        bindViewModel()
     }
     
     private func setupUI() {
         // String constants.
         titleLabel.text = NSLocalizedString("verify_email_title", comment: "")
-        messageLabel.setText(
-                to: String.localizedStringWithFormat(
-                    NSLocalizedString("verify_email_message", comment: ""),
-                    email),
-                withLineHeightMultiple: 1.25)
+
         continueButton.setTitle(
             NSLocalizedString("verify_email_button", comment: ""),
             for: .normal)
     }
+
+    private func bindViewModel() {
+        guard let viewModel = viewModel else { return }
+
+        continueButton.rx.tap
+            .subscribe(onNext: viewModel.continueSelected)
+            .disposed(by: disposeBag)
+
+        // Render screen when new view state is received.
+        viewModel.state
+            .subscribe(onNext: { [weak self] in self?.render($0) })
+            .disposed(by: disposeBag)
+    }
+
+    // Render correct elements depending on current state.
+    private func render(_ state: VerifyEmailViewState) {
+        switch state {
+        case .initial:
+            break
+        case .loaded(let email):
+            messageLabel.setText(
+                to: String.localizedStringWithFormat(
+                    NSLocalizedString("verify_email_message", comment: ""),
+                    email),
+                withLineHeightMultiple: 1.25)
+        }
+    }
+
 }

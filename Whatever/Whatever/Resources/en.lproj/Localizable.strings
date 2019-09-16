@@ -15,6 +15,12 @@
 "general_refresh" = "Refresh";
 "general_close" = "Close";
 
+// MARK: Validation
+"validation_error_email" = "Please enter a valid email address.";
+"validation_error_empty" = "This field is required.";
+"validation_error_password" = "Your password needs to be at least 8 characters and contain at least 1 special character.";
+"validation_error_mismatched_passwords" = "Your passwords don't match.";
+
 // MARK: Introduction
 "introduction_outfit_title" = "Today's outfit: sorted.";
 "introduction_outfit_description" = "Whatever chooses it for you.";

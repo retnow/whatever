@@ -11,6 +11,7 @@
 		20647355232A207600774F3F /* AuthenticationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20647354232A207600774F3F /* AuthenticationRepository.swift */; };
 		20647358232A2F6700774F3F /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20647357232A2F6700774F3F /* AuthenticationManager.swift */; };
 		2064735A232A348400774F3F /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20647359232A348400774F3F /* AppManager.swift */; };
+		20D2699D232F628000DCCE42 /* VerifyEmailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D2699C232F628000DCCE42 /* VerifyEmailViewModel.swift */; };
 		BB064758232E656B0048A29B /* KeychainSecureItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB064757232E656B0048A29B /* KeychainSecureItem.swift */; };
 		BB06475A232E66450048A29B /* KeychainConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB064759232E66450048A29B /* KeychainConfiguration.swift */; };
 		BB06475C232E666A0048A29B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB06475B232E666A0048A29B /* Constants.swift */; };
@@ -89,6 +90,7 @@
 		20647354232A207600774F3F /* AuthenticationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationRepository.swift; sourceTree = "<group>"; };
 		20647357232A2F6700774F3F /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
 		20647359232A348400774F3F /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
+		20D2699C232F628000DCCE42 /* VerifyEmailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyEmailViewModel.swift; sourceTree = "<group>"; };
 		43128C2543A405FEB97FF553 /* Pods_Whatever.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Whatever.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4502A23CECBA22D1DB4B6972 /* Pods-Whatever.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Whatever.debug.xcconfig"; path = "Target Support Files/Pods-Whatever/Pods-Whatever.debug.xcconfig"; sourceTree = "<group>"; };
 		BB064757232E656B0048A29B /* KeychainSecureItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainSecureItem.swift; sourceTree = "<group>"; };
@@ -385,6 +387,7 @@
 			children = (
 				BB80CAB623292758005EFB00 /* VerifyEmailViewController.xib */,
 				BB80CAB82329289B005EFB00 /* VerifyEmailViewController.swift */,
+				20D2699C232F628000DCCE42 /* VerifyEmailViewModel.swift */,
 			);
 			path = "Verify Email";
 			sourceTree = "<group>";
@@ -724,6 +727,7 @@
 				BBA410662323636B00631E73 /* AppCoordinator.swift in Sources */,
 				BB80CAAF232916F0005EFB00 /* Caption2.swift in Sources */,
 				BB4775B42323943C00678E5A /* UIView+Image.swift in Sources */,
+				20D2699D232F628000DCCE42 /* VerifyEmailViewModel.swift in Sources */,
 				BB2840F42323C4B000FEC5B0 /* IntroductionDescriptionViewController.swift in Sources */,
 				BB622E9D23239C9000696F52 /* IntroductionPageViewController.swift in Sources */,
 				BBA41063232361FB00631E73 /* UIColor+Theme.swift in Sources */,

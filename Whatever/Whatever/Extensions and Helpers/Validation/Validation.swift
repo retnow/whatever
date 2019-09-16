@@ -11,13 +11,16 @@ import Foundation
 public enum ValidationInput {
     case email
     case notEmpty
+    case password
     
     var errorMessage: String {
         switch self {
         case .email:
-            return "Please enter a valid email address."
+            return NSLocalizedString("validation_error_email", comment: "")
         case .notEmpty:
-            return "This field is required."
+            return NSLocalizedString("validation_error_empty", comment: "")
+        case .password:
+            return NSLocalizedString("validation_error_password", comment: "")
         }
     }
     
@@ -29,24 +32,35 @@ public enum ValidationInput {
         // Not relevant, so return an empty string.
         case .notEmpty:
             return ""
+        // Note that this regex is the requirement that matches an invalid password.
+        case .password:
+            return "^(.{0,7}|[a-zA-Z0-9]*)$"
         }
     }
 }
 
 public class Validation {
-    static func validate(_ text: String, against type: ValidationInput) -> Bool {
+    static func validate(
+        _ text: String,
+        against type: ValidationInput) -> Bool {
         switch type {
         case .email:
             return Validation.compare(text, matching: type.regex)
+        case .password:
+            return !Validation.compare(text, matching: type.regex)
         case .notEmpty:
             return !text.isEmpty
         }
     }
     
-    private static func compare(_ text: String, matching regex: String) -> Bool {
+    private static func compare(
+        _ text: String,
+        matching regex: String) -> Bool {
         do {
             // If match is found against given regex pattern, return true.
-            if try NSRegularExpression(pattern: regex, options: .caseInsensitive)
+            if try NSRegularExpression(
+                pattern: regex,
+                options: .caseInsensitive)
                 .firstMatch(
                     in: text,
                     options: [],

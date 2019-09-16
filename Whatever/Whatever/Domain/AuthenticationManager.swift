@@ -61,4 +61,12 @@ final class AuthenticationManager {
             }
             .catchErrorJustReturn(.wrongCredentials)
     }
+
+    func sendVerificationEmail() -> Completable {
+        return authenticationRepository.sendVerificationEmail()
+    }
+
+    func sendPasswordReset(to email: String) -> Completable {
+        return authenticationRepository.sendPasswordReset(email: email)
+    }
 }
