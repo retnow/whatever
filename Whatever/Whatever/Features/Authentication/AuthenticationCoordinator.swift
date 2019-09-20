@@ -40,7 +40,9 @@ class AuthenticationCoordinator: NavigationCoordinator<AuthenticationRoute> {
             
         case .login:
             let vc = LoginViewController()
-            let vm = LoginViewModel(router: anyRouter)
+            let vm = LoginViewModel(
+                router: anyRouter,
+                authenticationService: AppService.shared.authentication)
             vc.viewModel = vm
             return .push(vc)
         
@@ -48,7 +50,7 @@ class AuthenticationCoordinator: NavigationCoordinator<AuthenticationRoute> {
             let vc = CreateAccountViewController()
             let vm = CreateAccountViewModel(
                 router: anyRouter,
-                authenticationManager: AppManager.shared.authentication)
+                authenticationService: AppService.shared.authentication)
             vc.viewModel = vm
             return .push(vc)
             
@@ -57,15 +59,16 @@ class AuthenticationCoordinator: NavigationCoordinator<AuthenticationRoute> {
             let vm = VerifyEmailViewModel(
                 email: email,
                 router: anyRouter,
-                authenticationManager: AppManager.shared.authentication)
+                authenticationService: AppService.shared.authentication)
             vc.viewModel = vm
             return .push(vc)
-        
+
+        // TODO: Present this flow modally (need a subcoordinator/router)?
         case .forgotPassword:
             let vc = ForgotPasswordViewController()
             let vm = ForgotPasswordViewModel(
                 router: anyRouter,
-                authenticationManager: AppManager.shared.authentication)
+                authenticationService: AppService.shared.authentication)
             vc.viewModel = vm
             return .push(vc)
             

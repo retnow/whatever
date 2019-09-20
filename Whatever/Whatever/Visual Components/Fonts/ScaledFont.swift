@@ -9,7 +9,8 @@
 import UIKit
 
 /**
-A public class that allows text styles to be used with custom font sets, which are defined in a supplied style dictionary.
+A public class that allows text styles to be used with custom font sets,
+ which are defined in a supplied style dictionary.
  */
 public final class ScaledFont {
     
@@ -30,7 +31,6 @@ public final class ScaledFont {
     }
     
     public final class ScaledFont {
-        
         private struct FontDescription: Decodable {
             let fontSize: CGFloat
             let fontName: String

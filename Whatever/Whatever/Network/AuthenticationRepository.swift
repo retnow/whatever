@@ -2,7 +2,7 @@
 //  AuthenticationRepository.swift
 //  Whatever
 //
-//  Created by Widyanti, Retno (AU - Melbourne) on 12/9/19.
+//  Created by Retno Widyanti on 12/9/19.
 //  Copyright © 2019 Retno Widyanti. All rights reserved.
 //
 

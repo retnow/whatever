@@ -11,6 +11,9 @@ import XCoordinator
 enum MainRoute: Route {
     // TODO: Complete this when routes are added.
     case outfit
+    case closet
+    case calendar
+    case profile
 }
 
 final class MainCoordinator: TabBarCoordinator<MainRoute> {
@@ -22,7 +25,7 @@ final class MainCoordinator: TabBarCoordinator<MainRoute> {
         // TODO: Complete this with different routes when completed.
         // Initialize tab bar.
         let outfit = UIViewController()
-        let closet = UIViewController()
+        let closet = ClosetCoordinator()
         let calendar = UIViewController()
         let profile = UIViewController()
         super.init(tabs: [outfit, closet, calendar, profile])

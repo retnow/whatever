@@ -50,9 +50,7 @@ final class VerifyEmailViewController: AppViewController {
     // Render correct elements depending on current state.
     private func render(_ state: VerifyEmailViewState) {
         switch state {
-        case .initial:
-            break
-        case .loaded(let email):
+        case .initial(let email):
             messageLabel.setText(
                 to: String.localizedStringWithFormat(
                     NSLocalizedString("verify_email_message", comment: ""),

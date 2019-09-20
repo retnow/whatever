@@ -23,17 +23,17 @@ final class CreateAccountViewModel {
     private let stateSubject = BehaviorSubject<CreateAccountViewState>(value: .initial)
 
     private let router: AnyRouter<AuthenticationRoute>
-    private let authenticationManager: AuthenticationManager
+    private let authenticationService: AuthenticationService
 
     init(
         router: AnyRouter<AuthenticationRoute>,
-        authenticationManager: AuthenticationManager) {
+        authenticationService: AuthenticationService) {
         self.router = router
-        self.authenticationManager = authenticationManager
+        self.authenticationService = authenticationService
     }
 
     func createAccount(name: String, email: String, password: String) {
-        authenticationManager.createUser(
+        authenticationService.createUser(
             name: name,
             email: email,
             password: password)

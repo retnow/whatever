@@ -23,7 +23,7 @@ class AppCoordinator: ViewCoordinator<AppRoute> {
         super.init(initialRoute: .introduction)
 
         // Listen to change in authentication state to deal with session timeout and logout.
-        AppManager.shared.authentication.authenticated
+        AppService.shared.authentication.authenticated
             .drive(onNext: { [weak self] state in
                 guard let self = self else { return }
                 self.rootViewController.dismiss(animated: true)

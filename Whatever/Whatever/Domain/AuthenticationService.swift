@@ -1,8 +1,8 @@
 //
-//  AuthenticationManager.swift
+//  AuthenticationService.swift
 //  Whatever
 //
-//  Created by Widyanti, Retno (AU - Melbourne) on 12/9/19.
+//  Created by Retno Widyanti on 12/9/19.
 //  Copyright © 2019 Retno Widyanti. All rights reserved.
 //
 
@@ -21,7 +21,7 @@ enum AuthenticatedState {
     case loggedOut
 }
 
-final class AuthenticationManager {
+final class AuthenticationService {
     private let disposeBag = DisposeBag()
 
     // Variable exposing authentication state.
@@ -59,6 +59,15 @@ final class AuthenticationManager {
                 }
                 return .just(.emailUnverified)
             }
+            .do(onSuccess: { [weak self] authenticated in
+                switch authenticated {
+                case .success(let newUser):
+                    self?.authenticatedSubject.onNext(
+                        .loggedIn(newUser: newUser))
+                default:
+                    break
+                }
+            })
             .catchErrorJustReturn(.wrongCredentials)
     }
 

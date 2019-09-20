@@ -11,6 +11,8 @@ import RxSwift
 import RxCocoa
 import RxKeyboard
 
+// TODO: Handle different view states depending on forgot password flow.
+
 final class ForgotPasswordViewController: AppViewController {
     private let disposeBag = DisposeBag()
 
@@ -70,15 +72,6 @@ final class ForgotPasswordViewController: AppViewController {
         backToLoginButton.rx.tap
             .subscribe(onNext: viewModel.backToLoginSelected)
             .disposed(by: disposeBag)
-    }
-
-    // Render correct elements depending on current state.
-    // TODO: Fill this in when different view states are required.
-    private func render(_ state: LoginViewState) {
-        switch state {
-        case .initial:
-            break
-        }
     }
 }
 

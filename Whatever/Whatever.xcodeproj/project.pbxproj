@@ -9,9 +9,11 @@
 /* Begin PBXBuildFile section */
 		183B855309CAF378DC275B01 /* Pods_Whatever.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43128C2543A405FEB97FF553 /* Pods_Whatever.framework */; };
 		20647355232A207600774F3F /* AuthenticationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20647354232A207600774F3F /* AuthenticationRepository.swift */; };
-		20647358232A2F6700774F3F /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20647357232A2F6700774F3F /* AuthenticationManager.swift */; };
-		2064735A232A348400774F3F /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20647359232A348400774F3F /* AppManager.swift */; };
-		20D2699D232F628000DCCE42 /* VerifyEmailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D2699C232F628000DCCE42 /* VerifyEmailViewModel.swift */; };
+		20647358232A2F6700774F3F /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20647357232A2F6700774F3F /* AuthenticationService.swift */; };
+		2064735A232A348400774F3F /* AppService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20647359232A348400774F3F /* AppService.swift */; };
+		2096D0F72332332900325B0A /* VerifyEmailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2096D0F62332332900325B0A /* VerifyEmailViewModel.swift */; };
+		2096D0FA2332420400325B0A /* ClosetCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2096D0F92332420400325B0A /* ClosetCoordinator.swift */; };
+		2096D0FE233243A300325B0A /* AddClosetItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2096D0FD233243A300325B0A /* AddClosetItemViewController.swift */; };
 		BB064758232E656B0048A29B /* KeychainSecureItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB064757232E656B0048A29B /* KeychainSecureItem.swift */; };
 		BB06475A232E66450048A29B /* KeychainConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB064759232E66450048A29B /* KeychainConfiguration.swift */; };
 		BB06475C232E666A0048A29B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB06475B232E666A0048A29B /* Constants.swift */; };
@@ -88,9 +90,11 @@
 /* Begin PBXFileReference section */
 		0EE8043061464FB91750F245 /* Pods-Whatever.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Whatever.release.xcconfig"; path = "Target Support Files/Pods-Whatever/Pods-Whatever.release.xcconfig"; sourceTree = "<group>"; };
 		20647354232A207600774F3F /* AuthenticationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationRepository.swift; sourceTree = "<group>"; };
-		20647357232A2F6700774F3F /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
-		20647359232A348400774F3F /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
-		20D2699C232F628000DCCE42 /* VerifyEmailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyEmailViewModel.swift; sourceTree = "<group>"; };
+		20647357232A2F6700774F3F /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
+		20647359232A348400774F3F /* AppService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppService.swift; sourceTree = "<group>"; };
+		2096D0F62332332900325B0A /* VerifyEmailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyEmailViewModel.swift; sourceTree = "<group>"; };
+		2096D0F92332420400325B0A /* ClosetCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosetCoordinator.swift; sourceTree = "<group>"; };
+		2096D0FD233243A300325B0A /* AddClosetItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddClosetItemViewController.swift; sourceTree = "<group>"; };
 		43128C2543A405FEB97FF553 /* Pods_Whatever.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Whatever.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4502A23CECBA22D1DB4B6972 /* Pods-Whatever.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Whatever.debug.xcconfig"; path = "Target Support Files/Pods-Whatever/Pods-Whatever.debug.xcconfig"; sourceTree = "<group>"; };
 		BB064757232E656B0048A29B /* KeychainSecureItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainSecureItem.swift; sourceTree = "<group>"; };
@@ -191,8 +195,8 @@
 		20647356232A2F5A00774F3F /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				20647359232A348400774F3F /* AppManager.swift */,
-				20647357232A2F6700774F3F /* AuthenticationManager.swift */,
+				20647359232A348400774F3F /* AppService.swift */,
+				20647357232A2F6700774F3F /* AuthenticationService.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -204,6 +208,31 @@
 				BB4775B223237BD300678E5A /* View Model */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		2096D0F8233241ED00325B0A /* Closet */ = {
+			isa = PBXGroup;
+			children = (
+				2096D0F92332420400325B0A /* ClosetCoordinator.swift */,
+				2096D0FB2332420A00325B0A /* Your Closet */,
+				2096D0FC2332421000325B0A /* Add Item */,
+			);
+			path = Closet;
+			sourceTree = "<group>";
+		};
+		2096D0FB2332420A00325B0A /* Your Closet */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Your Closet";
+			sourceTree = "<group>";
+		};
+		2096D0FC2332421000325B0A /* Add Item */ = {
+			isa = PBXGroup;
+			children = (
+				2096D0FD233243A300325B0A /* AddClosetItemViewController.swift */,
+			);
+			path = "Add Item";
 			sourceTree = "<group>";
 		};
 		3FE57ECD5B2020211FAD3713 /* Frameworks */ = {
@@ -387,7 +416,7 @@
 			children = (
 				BB80CAB623292758005EFB00 /* VerifyEmailViewController.xib */,
 				BB80CAB82329289B005EFB00 /* VerifyEmailViewController.swift */,
-				20D2699C232F628000DCCE42 /* VerifyEmailViewModel.swift */,
+				2096D0F62332332900325B0A /* VerifyEmailViewModel.swift */,
 			);
 			path = "Verify Email";
 			sourceTree = "<group>";
@@ -468,6 +497,7 @@
 				BB4775B523239ACC00678E5A /* Introduction */,
 				BBA410692323653700631E73 /* Authentication */,
 				BB28410C23248FCB00FEC5B0 /* Main */,
+				2096D0F8233241ED00325B0A /* Closet */,
 				BB80CAC4232E639D005EFB00 /* Storage */,
 			);
 			path = Features;
@@ -727,7 +757,8 @@
 				BBA410662323636B00631E73 /* AppCoordinator.swift in Sources */,
 				BB80CAAF232916F0005EFB00 /* Caption2.swift in Sources */,
 				BB4775B42323943C00678E5A /* UIView+Image.swift in Sources */,
-				20D2699D232F628000DCCE42 /* VerifyEmailViewModel.swift in Sources */,
+				2096D0F72332332900325B0A /* VerifyEmailViewModel.swift in Sources */,
+				2096D0FA2332420400325B0A /* ClosetCoordinator.swift in Sources */,
 				BB2840F42323C4B000FEC5B0 /* IntroductionDescriptionViewController.swift in Sources */,
 				BB622E9D23239C9000696F52 /* IntroductionPageViewController.swift in Sources */,
 				BBA41063232361FB00631E73 /* UIColor+Theme.swift in Sources */,
@@ -741,6 +772,7 @@
 				BBA41042232343AB00631E73 /* AppDelegate.swift in Sources */,
 				20647355232A207600774F3F /* AuthenticationRepository.swift in Sources */,
 				BB064758232E656B0048A29B /* KeychainSecureItem.swift in Sources */,
+				2096D0FE233243A300325B0A /* AddClosetItemViewController.swift in Sources */,
 				BB2840E02323A8BC00FEC5B0 /* Heading1.swift in Sources */,
 				BB2840E62323A94900FEC5B0 /* Heading4.swift in Sources */,
 				BB2840E42323A91700FEC5B0 /* Heading3.swift in Sources */,
@@ -748,11 +780,11 @@
 				BBA41087232369F500631E73 /* AuthenticationCoordinator.swift in Sources */,
 				BBA410852323691600631E73 /* LoginViewModel.swift in Sources */,
 				BB2840EA2323A9A800FEC5B0 /* Label1.swift in Sources */,
-				20647358232A2F6700774F3F /* AuthenticationManager.swift in Sources */,
+				20647358232A2F6700774F3F /* AuthenticationService.swift in Sources */,
 				BB2840FC2323E76B00FEC5B0 /* TertiaryButton.swift in Sources */,
 				BB622E9F2323A00A00696F52 /* IntroductionLogoViewController.swift in Sources */,
 				BB28410823248ECF00FEC5B0 /* Caption1.swift in Sources */,
-				2064735A232A348400774F3F /* AppManager.swift in Sources */,
+				2064735A232A348400774F3F /* AppService.swift in Sources */,
 				BB80CABB23292A79005EFB00 /* CreateAccountViewModel.swift in Sources */,
 				BB064762232E69A40048A29B /* ForgotPasswordViewController.swift in Sources */,
 				BB064766232E6C390048A29B /* ForgotPasswordViewModel.swift in Sources */,

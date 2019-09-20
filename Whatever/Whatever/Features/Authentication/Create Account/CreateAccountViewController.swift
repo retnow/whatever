@@ -45,28 +45,48 @@ final class CreateAccountViewController: AppViewController {
         emailTextField.delegate = self
         passwordTextField.delegate = self
         confirmPasswordTextField.delegate = self
-        
+
         // Scroll view
         RxKeyboard.instance.visibleHeight
             .drive(onNext: { [weak self] visibleKeyboardHeight in
                 self?.scrollView.contentInset.bottom = visibleKeyboardHeight
             })
             .disposed(by: disposeBag)
-        
+
         // String constants
-        titleLabel.text = NSLocalizedString("create_account_title", comment: "")
+        titleLabel.text = NSLocalizedString(
+            "create_account_title",
+            comment: "")
         descriptionLabel.setText(
             to: NSLocalizedString("create_account_description", comment: ""),
             withLineHeightMultiple: 1.25)
-        nameTitleLabel.text = NSLocalizedString("create_account_name_title", comment: "")
-        nameTextField.placeholder = NSLocalizedString("create_account_name_placeholder", comment: "")
-        emailTitleLabel.text = NSLocalizedString("create_account_email_title", comment: "")
-        emailTextField.placeholder = NSLocalizedString("create_account_email_placeholder", comment: "")
-        passwordTitleLabel.text = NSLocalizedString("create_account_password_title", comment: "")
-        passwordTextField.placeholder = NSLocalizedString("create_account_password_placeholder", comment: "")
-        confirmPasswordTitleLabel.text = NSLocalizedString("create_account_confirm_password_title", comment: "")
-        confirmPasswordTextField.placeholder = NSLocalizedString("create_account_confirm_password_placeholder", comment: "")
-        createAccountButton.setTitle(NSLocalizedString("create_account_button", comment: ""), for: .normal)
+        nameTitleLabel.text = NSLocalizedString(
+            "create_account_name_title",
+            comment: "")
+        nameTextField.placeholder = NSLocalizedString(
+            "create_account_name_placeholder",
+            comment: "")
+        emailTitleLabel.text = NSLocalizedString(
+            "create_account_email_title",
+            comment: "")
+        emailTextField.placeholder = NSLocalizedString(
+            "create_account_email_placeholder",
+            comment: "")
+        passwordTitleLabel.text = NSLocalizedString(
+            "create_account_password_title",
+            comment: "")
+        passwordTextField.placeholder = NSLocalizedString(
+            "create_account_password_placeholder",
+            comment: "")
+        confirmPasswordTitleLabel.text = NSLocalizedString(
+            "create_account_confirm_password_title",
+            comment: "")
+        confirmPasswordTextField.placeholder = NSLocalizedString(
+            "create_account_confirm_password_placeholder",
+            comment: "")
+        createAccountButton.setTitle(
+            NSLocalizedString("create_account_button", comment: ""),
+            for: .normal)
     }
 
     private func bindViewModel() {

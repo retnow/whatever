@@ -79,10 +79,10 @@ final class LoginViewController: AppViewController {
         loginButton.rx.tap
             .subscribe(onNext: { [weak self] in
                 guard let self = self else { return }
-                let username = self.usernameTextField.text ?? ""
+                let email = self.usernameTextField.text ?? ""
                 let password = self.passwordTextField.text ?? ""
-                viewModel.attemptLogin(
-                    username: username,
+                viewModel.login(
+                    email: email,
                     password: password)
             })
             .disposed(by: disposeBag)
@@ -103,6 +103,14 @@ final class LoginViewController: AppViewController {
     private func render(_ state: LoginViewState) {
         switch state {
         case .initial:
+            break
+        case .loading:
+            break
+        case .wrongCredentials:
+            break
+        case .emailUnverified:
+            break
+        case .error:
             break
         }
     }
