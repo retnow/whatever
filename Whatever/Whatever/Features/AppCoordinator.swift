@@ -7,6 +7,7 @@
 //
 
 import XCoordinator
+import SnapKit
 import RxSwift
 import RxCocoa
 
@@ -47,10 +48,17 @@ class AppCoordinator: ViewCoordinator<AppRoute> {
 
         // TODO: Skip introduction for existing user.
         case .introduction:
-            let authenticationCoordinator = AuthenticationCoordinator()
+            // TODO: Remove when UI is complete
+            // TEST: Main coordinator
+            let mainRouter = MainCoordinator().anyRouter
             return .embed(
-                authenticationCoordinator,
+                mainRouter,
                 in: self.rootViewController)
+
+//            let authenticationCoordinator = AuthenticationCoordinator()
+//            return .embed(
+//                authenticationCoordinator,
+//                in: self.rootViewController)
 
         // TODO: Handle reauthentication for logged in existing user.
         case .login:
@@ -84,25 +92,26 @@ fileprivate extension Transition {
         switch style {
         case .present:
             return Transition(
-                presentables: [presentable],
-                animationInUse: nil) { root, options, completion in
-                root.embedPresent(
-                    presentable.viewController,
-                    in: container,
-                    with: options) {
-                    presentable.presented(from: root)
+            presentables: [presentable],
+            animationInUse: nil) {
+                rootViewController, options, completion in
+                rootViewController.embedPresent(
+                presentable.viewController,
+                in: container,
+                with: options) {
+                    presentable.presented(from: rootViewController)
                     completion?()
                 }
             }
 
         case .dismiss:
             return Transition(
-                presentables: [presentable],
-                animationInUse: nil) { root, options, completion in
-                root.embedDismiss(
-                    presentable.viewController,
-                    in: container, with: options) {
-                    presentable.presented(from: root)
+            presentables: [presentable],
+            animationInUse: nil) {
+                rootViewController, options, completion in
+                rootViewController.embedDismiss(
+                presentable.viewController, in: container, with: options) {
+                    presentable.presented(from: rootViewController)
                     completion?()
                 }
             }
@@ -119,25 +128,51 @@ fileprivate extension UIViewController {
         container.viewController.addChild(viewController)
         container.view.addSubview(viewController.view)
 
-        // First set starting frame y-position as bottom-most point.
         viewController.view.frame.origin.y += viewController.view.frame.height
 
-        // Animate frame moving to top-most point.
         UIView.setAnimationCurve(.easeInOut)
         UIView.animate(withDuration: 0.5, animations: {
             viewController.view.frame.origin.y = 0
         }, completion: { _ in
-                let firstChild = container.viewController.children.first
-                firstChild?.removeFromParent()
-                firstChild?.view.removeFromSuperview()
-            })
+            let firstChild = container.viewController.children.first
+            firstChild?.removeFromParent()
+            firstChild?.view.removeFromSuperview()
+        })
 
-        container.view!.snp.makeConstraints { make in
-            make.leading.equalTo(viewController.view)
-            make.trailing.equalTo(viewController.view)
-            make.top.equalTo(viewController.view)
-            make.bottom.equalTo(viewController.view)
-        }
+        NSLayoutConstraint.activate(
+            [NSLayoutConstraint(
+                item: container.view!,
+                attribute: .leading,
+                relatedBy: .equal,
+                toItem: viewController.view,
+                attribute: .leading,
+                multiplier: 1,
+                constant: 0),
+             NSLayoutConstraint(
+                item: container.view!,
+                attribute: .trailing,
+                relatedBy: .equal,
+                toItem: viewController.view,
+                attribute: .trailing,
+                multiplier: 1,
+                constant: 0),
+             NSLayoutConstraint(
+                item: container.view!,
+                attribute: .top,
+                relatedBy: .equal,
+                toItem: viewController.view,
+                attribute: .top,
+                multiplier: 1,
+                constant: 0),
+             NSLayoutConstraint(
+                item: container.view!,
+                attribute: .bottom,
+                relatedBy: .equal,
+                toItem: viewController.view,
+                attribute: .bottom,
+                multiplier: 1,
+                constant: 0)
+            ])
 
         viewController.didMove(toParent: container.viewController)
         completion?()
@@ -146,7 +181,8 @@ fileprivate extension UIViewController {
     func embedDismiss(
         _ viewController: UIViewController,
         in container: Container,
-        with options: TransitionOptions, completion: PresentationHandler?) {
+        with options: TransitionOptions,
+        completion: PresentationHandler?) {
         let fromImageView = UIImageView(image: container.view.convertToImage())
 
         for child in container.viewController.children {
@@ -165,17 +201,45 @@ fileprivate extension UIViewController {
             withDuration: 0.5,
             animations: {
                 fromImageView.frame.origin.y += fromImageView.frame.height
-            },
+        },
             completion: { _ in
                 fromImageView.removeFromSuperview()
-            })
+        })
 
-        container.view!.snp.makeConstraints { make in
-            make.leading.equalTo(viewController.view)
-            make.trailing.equalTo(viewController.view)
-            make.top.equalTo(viewController.view)
-            make.bottom.equalTo(viewController.view)
-        }
+        NSLayoutConstraint.activate(
+            [NSLayoutConstraint(
+                item: container.view!,
+                attribute: .leading,
+                relatedBy: .equal,
+                toItem: viewController.view,
+                attribute: .leading,
+                multiplier: 1,
+                constant: 0),
+             NSLayoutConstraint(
+                item: container.view!,
+                attribute: .trailing,
+                relatedBy: .equal,
+                toItem: viewController.view,
+                attribute: .trailing,
+                multiplier: 1,
+                constant: 0),
+             NSLayoutConstraint(
+                item: container.view!,
+                attribute: .top,
+                relatedBy: .equal,
+                toItem: viewController.view,
+                attribute: .top,
+                multiplier: 1,
+                constant: 0),
+             NSLayoutConstraint(
+                item: container.view!,
+                attribute: .bottom,
+                relatedBy: .equal,
+                toItem: viewController.view,
+                attribute: .bottom,
+                multiplier: 1,
+                constant: 0)
+            ])
 
         viewController.didMove(toParent: container.viewController)
     }

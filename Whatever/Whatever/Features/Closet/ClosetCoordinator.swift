@@ -15,7 +15,9 @@ enum ClosetRoute: Route {
 
 final class ClosetCoordinator: NavigationCoordinator<ClosetRoute> {
     internal override func generateRootViewController() -> UINavigationController {
-        return NavigationController()
+        let navigationController = NavigationController()
+        navigationController.navigationBar.prefersLargeTitles = true
+        return navigationController
     }
 
     init() {
@@ -26,7 +28,7 @@ final class ClosetCoordinator: NavigationCoordinator<ClosetRoute> {
         for route: ClosetRoute) -> NavigationTransition {
         switch route {
         case .yourCloset:
-            let vc = UIViewController()
+            let vc = YourClosetViewController()
             return .show(vc)
 
         case .addItem:

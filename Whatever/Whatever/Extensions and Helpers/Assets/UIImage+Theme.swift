@@ -20,6 +20,7 @@ extension UIImage {
         
         // Navigation bar
         case back
+        case filter
         
         // Introduction
         case introductionOutfit

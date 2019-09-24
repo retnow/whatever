@@ -62,3 +62,15 @@
 "forgot_password_description" = "Oops. Enter your e-mail and we'll send you instructions on how to reset your password.";
 "forgot_password_reset" = "Reset my password";
 "forgot_password_back" = "Back to login";
+
+// MARK: Tab bar
+"tab_bar_outfit_accessibility_label" = "Your outfit";
+"tab_bar_closet_accessibility_label" = "Your closet";
+"tab_bar_calendar_accessibility_label" = "Your calendar";
+"tab_bar_profile_accessibility_label" = "Your profile";
+
+// Mark: Your closet
+"your_closet_title" = "Your closet.";
+"your_closet_add_accessibility_label" = "Add an item";
+"your_closet_filter_accessibility_label" = "Filter items";
+

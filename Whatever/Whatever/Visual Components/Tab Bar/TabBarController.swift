@@ -15,9 +15,9 @@ class TabBarController: UITabBarController {
     }
     
     private func setupUI() {
-        tabBar.isTranslucent = false
-        tabBar.barTintColor = UIColor(named: .backgroundInverted)
-        tabBar.tintColor = UIColor(named: .background)
+        tabBar.isTranslucent = true
+        tabBar.barTintColor = UIColor(named: .background)
+        tabBar.tintColor = UIColor(named: .backgroundInverted)
         tabBar.unselectedItemTintColor = UIColor(named: .disabled)
     }
 }

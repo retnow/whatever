@@ -8,11 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		183B855309CAF378DC275B01 /* Pods_Whatever.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43128C2543A405FEB97FF553 /* Pods_Whatever.framework */; };
+		205EE75F2338A240006F8B2F /* YourClosetMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205EE75E2338A240006F8B2F /* YourClosetMenuView.swift */; };
+		205EE7612338A539006F8B2F /* YourClosetMenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205EE7602338A539006F8B2F /* YourClosetMenuCollectionViewCell.swift */; };
 		20647355232A207600774F3F /* AuthenticationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20647354232A207600774F3F /* AuthenticationRepository.swift */; };
 		20647358232A2F6700774F3F /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20647357232A2F6700774F3F /* AuthenticationService.swift */; };
 		2064735A232A348400774F3F /* AppService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20647359232A348400774F3F /* AppService.swift */; };
 		2073B5A82334835400A896B4 /* YourClosetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2073B5A72334835400A896B4 /* YourClosetViewController.swift */; };
 		2073B5AA2334835F00A896B4 /* YourClosetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2073B5A92334835F00A896B4 /* YourClosetViewModel.swift */; };
+		2073B5AC233893F500A896B4 /* YourClosetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2073B5AB233893F500A896B4 /* YourClosetViewController.xib */; };
 		2096D0F72332332900325B0A /* VerifyEmailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2096D0F62332332900325B0A /* VerifyEmailViewModel.swift */; };
 		2096D0FA2332420400325B0A /* ClosetCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2096D0F92332420400325B0A /* ClosetCoordinator.swift */; };
 		BB064758232E656B0048A29B /* KeychainSecureItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB064757232E656B0048A29B /* KeychainSecureItem.swift */; };
@@ -90,11 +93,14 @@
 
 /* Begin PBXFileReference section */
 		0EE8043061464FB91750F245 /* Pods-Whatever.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Whatever.release.xcconfig"; path = "Target Support Files/Pods-Whatever/Pods-Whatever.release.xcconfig"; sourceTree = "<group>"; };
+		205EE75E2338A240006F8B2F /* YourClosetMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourClosetMenuView.swift; sourceTree = "<group>"; };
+		205EE7602338A539006F8B2F /* YourClosetMenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourClosetMenuCollectionViewCell.swift; sourceTree = "<group>"; };
 		20647354232A207600774F3F /* AuthenticationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationRepository.swift; sourceTree = "<group>"; };
 		20647357232A2F6700774F3F /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
 		20647359232A348400774F3F /* AppService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppService.swift; sourceTree = "<group>"; };
 		2073B5A72334835400A896B4 /* YourClosetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourClosetViewController.swift; sourceTree = "<group>"; };
 		2073B5A92334835F00A896B4 /* YourClosetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourClosetViewModel.swift; sourceTree = "<group>"; };
+		2073B5AB233893F500A896B4 /* YourClosetViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YourClosetViewController.xib; sourceTree = "<group>"; };
 		2096D0F62332332900325B0A /* VerifyEmailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyEmailViewModel.swift; sourceTree = "<group>"; };
 		2096D0F92332420400325B0A /* ClosetCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosetCoordinator.swift; sourceTree = "<group>"; };
 		43128C2543A405FEB97FF553 /* Pods_Whatever.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Whatever.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -186,6 +192,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		205EE75D2338A219006F8B2F /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				205EE75E2338A240006F8B2F /* YourClosetMenuView.swift */,
+				205EE7602338A539006F8B2F /* YourClosetMenuCollectionViewCell.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
 		20647351232A1D8500774F3F /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -225,6 +240,8 @@
 		2096D0FB2332420A00325B0A /* Your Closet */ = {
 			isa = PBXGroup;
 			children = (
+				205EE75D2338A219006F8B2F /* Subviews */,
+				2073B5AB233893F500A896B4 /* YourClosetViewController.xib */,
 				2073B5A72334835400A896B4 /* YourClosetViewController.swift */,
 				2073B5A92334835F00A896B4 /* YourClosetViewModel.swift */,
 			);
@@ -680,6 +697,7 @@
 				BBA41049232343AE00631E73 /* Assets.xcassets in Resources */,
 				BB2841012323F29200FEC5B0 /* SourceSansPro-Bold.ttf in Resources */,
 				BB80CAB723292758005EFB00 /* VerifyEmailViewController.xib in Resources */,
+				2073B5AC233893F500A896B4 /* YourClosetViewController.xib in Resources */,
 				BB2840F72323C60800FEC5B0 /* IntroductionDescriptionViewController.xib in Resources */,
 				BB2840FD2323F21600FEC5B0 /* SourceSansPro-Regular.ttf in Resources */,
 				BB2841002323F21D00FEC5B0 /* SourceSansPro-SemiBoldItalic.ttf in Resources */,
@@ -776,8 +794,10 @@
 				BBA41042232343AB00631E73 /* AppDelegate.swift in Sources */,
 				20647355232A207600774F3F /* AuthenticationRepository.swift in Sources */,
 				BB064758232E656B0048A29B /* KeychainSecureItem.swift in Sources */,
+				205EE75F2338A240006F8B2F /* YourClosetMenuView.swift in Sources */,
 				BB2840E02323A8BC00FEC5B0 /* Heading1.swift in Sources */,
 				BB2840E62323A94900FEC5B0 /* Heading4.swift in Sources */,
+				205EE7612338A539006F8B2F /* YourClosetMenuCollectionViewCell.swift in Sources */,
 				BB2840E42323A91700FEC5B0 /* Heading3.swift in Sources */,
 				BBA4106D232365B400631E73 /* ScaledFont.swift in Sources */,
 				BBA41087232369F500631E73 /* AuthenticationCoordinator.swift in Sources */,

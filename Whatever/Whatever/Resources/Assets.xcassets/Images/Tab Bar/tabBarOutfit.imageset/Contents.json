@@ -2,11 +2,14 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "icons8-person_female.png"
+      "filename" : "icons8-hanger.pdf"
     }
   ],
   "info" : {
     "version" : 1,
     "author" : "xcode"
+  },
+  "properties" : {
+    "preserves-vector-representation" : true
   }
 }
