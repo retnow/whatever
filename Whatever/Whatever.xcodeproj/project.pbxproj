@@ -62,6 +62,12 @@
 		BB80CAC1232E6187005EFB00 /* RxStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB80CAC0232E6186005EFB00 /* RxStore.swift */; };
 		BB80CAC3232E6254005EFB00 /* ApplicationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB80CAC2232E6254005EFB00 /* ApplicationError.swift */; };
 		BB88B0DD2328F93200F72013 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB88B0DC2328F93200F72013 /* GoogleService-Info.plist */; };
+		BB9DFB71233E22BD0050F2AA /* YourClosetMenuCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB9DFB70233E22BD0050F2AA /* YourClosetMenuCollectionViewCell.xib */; };
+		BB9DFB74233E240C0050F2AA /* UITableViewCell+ReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9DFB73233E240C0050F2AA /* UITableViewCell+ReusableCell.swift */; };
+		BB9DFB76233E241B0050F2AA /* UITableView+ReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9DFB75233E241B0050F2AA /* UITableView+ReusableCell.swift */; };
+		BB9DFB78233E253B0050F2AA /* UICollectionReusableView+ReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9DFB77233E253B0050F2AA /* UICollectionReusableView+ReusableCell.swift */; };
+		BB9DFB7A233E25D50050F2AA /* UICollectionView+ReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9DFB79233E25D50050F2AA /* UICollectionView+ReusableCell.swift */; };
+		BB9DFB7C233E264D0050F2AA /* UICollectionViewCell+ReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9DFB7B233E264D0050F2AA /* UICollectionViewCell+ReusableCell.swift */; };
 		BBA41042232343AB00631E73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA41041232343AB00631E73 /* AppDelegate.swift */; };
 		BBA41049232343AE00631E73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBA41048232343AE00631E73 /* Assets.xcassets */; };
 		BBA4104C232343AE00631E73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBA4104A232343AE00631E73 /* LaunchScreen.storyboard */; };
@@ -145,6 +151,12 @@
 		BB80CAC2232E6254005EFB00 /* ApplicationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationError.swift; sourceTree = "<group>"; };
 		BB88B0DB2328F8FC00F72013 /* Whatever.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Whatever.entitlements; sourceTree = "<group>"; };
 		BB88B0DC2328F93200F72013 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BB9DFB70233E22BD0050F2AA /* YourClosetMenuCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YourClosetMenuCollectionViewCell.xib; sourceTree = "<group>"; };
+		BB9DFB73233E240C0050F2AA /* UITableViewCell+ReusableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+ReusableCell.swift"; sourceTree = "<group>"; };
+		BB9DFB75233E241B0050F2AA /* UITableView+ReusableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+ReusableCell.swift"; sourceTree = "<group>"; };
+		BB9DFB77233E253B0050F2AA /* UICollectionReusableView+ReusableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionReusableView+ReusableCell.swift"; sourceTree = "<group>"; };
+		BB9DFB79233E25D50050F2AA /* UICollectionView+ReusableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+ReusableCell.swift"; sourceTree = "<group>"; };
+		BB9DFB7B233E264D0050F2AA /* UICollectionViewCell+ReusableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+ReusableCell.swift"; sourceTree = "<group>"; };
 		BBA4103E232343AB00631E73 /* Whatever.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Whatever.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBA41041232343AB00631E73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BBA41048232343AE00631E73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -197,6 +209,7 @@
 			children = (
 				205EE75E2338A240006F8B2F /* YourClosetMenuView.swift */,
 				205EE7602338A539006F8B2F /* YourClosetMenuCollectionViewCell.swift */,
+				BB9DFB70233E22BD0050F2AA /* YourClosetMenuCollectionViewCell.xib */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -452,6 +465,18 @@
 			path = Storage;
 			sourceTree = "<group>";
 		};
+		BB9DFB72233E23E90050F2AA /* Reusable Cells */ = {
+			isa = PBXGroup;
+			children = (
+				BB9DFB73233E240C0050F2AA /* UITableViewCell+ReusableCell.swift */,
+				BB9DFB75233E241B0050F2AA /* UITableView+ReusableCell.swift */,
+				BB9DFB79233E25D50050F2AA /* UICollectionView+ReusableCell.swift */,
+				BB9DFB77233E253B0050F2AA /* UICollectionReusableView+ReusableCell.swift */,
+				BB9DFB7B233E264D0050F2AA /* UICollectionViewCell+ReusableCell.swift */,
+			);
+			path = "Reusable Cells";
+			sourceTree = "<group>";
+		};
 		BBA41035232343AB00631E73 = {
 			isa = PBXGroup;
 			children = (
@@ -505,6 +530,7 @@
 				BB064755232E64FF0048A29B /* Assets */,
 				BB064754232E64F20048A29B /* Views and Styling */,
 				BB064756232E650D0048A29B /* Validation */,
+				BB9DFB72233E23E90050F2AA /* Reusable Cells */,
 			);
 			path = "Extensions and Helpers";
 			sourceTree = "<group>";
@@ -689,6 +715,7 @@
 				BBA41075232366E400631E73 /* DMSerifDisplay-Regular.ttf in Resources */,
 				BB622EA12323A01A00696F52 /* IntroductionLogoViewController.xib in Resources */,
 				BB80CAB423291F64005EFB00 /* CreateAccountViewController.xib in Resources */,
+				BB9DFB71233E22BD0050F2AA /* YourClosetMenuCollectionViewCell.xib in Resources */,
 				BBA4104C232343AE00631E73 /* LaunchScreen.storyboard in Resources */,
 				BBA4108E23236E4B00631E73 /* LoginViewController.xib in Resources */,
 				BB2840FF2323F21B00FEC5B0 /* SourceSansPro-SemiBold.ttf in Resources */,
@@ -792,16 +819,21 @@
 				BB06475C232E666A0048A29B /* Constants.swift in Sources */,
 				BBA4108A23236AEF00631E73 /* NavigationController.swift in Sources */,
 				BBA41042232343AB00631E73 /* AppDelegate.swift in Sources */,
+				BB9DFB74233E240C0050F2AA /* UITableViewCell+ReusableCell.swift in Sources */,
 				20647355232A207600774F3F /* AuthenticationRepository.swift in Sources */,
 				BB064758232E656B0048A29B /* KeychainSecureItem.swift in Sources */,
 				205EE75F2338A240006F8B2F /* YourClosetMenuView.swift in Sources */,
+				BB9DFB7A233E25D50050F2AA /* UICollectionView+ReusableCell.swift in Sources */,
 				BB2840E02323A8BC00FEC5B0 /* Heading1.swift in Sources */,
+				BB9DFB76233E241B0050F2AA /* UITableView+ReusableCell.swift in Sources */,
 				BB2840E62323A94900FEC5B0 /* Heading4.swift in Sources */,
 				205EE7612338A539006F8B2F /* YourClosetMenuCollectionViewCell.swift in Sources */,
 				BB2840E42323A91700FEC5B0 /* Heading3.swift in Sources */,
 				BBA4106D232365B400631E73 /* ScaledFont.swift in Sources */,
 				BBA41087232369F500631E73 /* AuthenticationCoordinator.swift in Sources */,
 				BBA410852323691600631E73 /* LoginViewModel.swift in Sources */,
+				BB9DFB7C233E264D0050F2AA /* UICollectionViewCell+ReusableCell.swift in Sources */,
+				BB9DFB78233E253B0050F2AA /* UICollectionReusableView+ReusableCell.swift in Sources */,
 				BB2840EA2323A9A800FEC5B0 /* Label1.swift in Sources */,
 				20647358232A2F6700774F3F /* AuthenticationService.swift in Sources */,
 				BB2840FC2323E76B00FEC5B0 /* TertiaryButton.swift in Sources */,
