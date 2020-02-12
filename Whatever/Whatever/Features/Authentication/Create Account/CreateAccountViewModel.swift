@@ -48,7 +48,7 @@ final class CreateAccountViewModel {
         name: String,
         email: String,
         password: String) {
-        authenticationService.createUser(
+        _ = authenticationService.createUser(
             name: name,
             email: email,
             password: password)

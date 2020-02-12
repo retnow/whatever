@@ -10,14 +10,6 @@ import XCoordinator
 import RxSwift
 import RxCocoa
 
-enum VerifyEmailViewState {
-    case initial(email: String)
-}
-
-protocol VerifyEmailViewModelDelegate: class {
-    func verifyEmailViewStateDidUpdate(viewState: VerifyEmailViewState)
-}
-
 final class VerifyEmailViewModel {
     private let disposeBag = DisposeBag()
     

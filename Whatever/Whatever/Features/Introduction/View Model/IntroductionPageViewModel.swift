@@ -18,11 +18,11 @@ final class IntroductionPageViewModel {
     }
     
     // TODO: Implement router trigger actions.
-    func loginWasSelected() {
+    func loginSelected() {
         router.trigger(.login)
     }
     
-    func createAccountWasSelected() {
+    func createAccountSelected() {
         router.trigger(.createAccount)
     }
 }

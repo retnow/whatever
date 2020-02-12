@@ -8,11 +8,13 @@
 
 import UIKit
 
-extension String {
+fileprivate extension String {
     static let titleText = NSLocalizedString("verify_email_title", comment: "")
     static let continueButtonTitleText = NSLocalizedString("verify_email_button", comment: "")
     static func descriptionText(email: String) -> String {
-        return String.localizedStringWithFormat(NSLocalizedString("verify_email_message", comment: ""), email)
+        return String.localizedStringWithFormat(
+            NSLocalizedString("verify_email_message", comment: ""),
+            email)
     }
 }
 
