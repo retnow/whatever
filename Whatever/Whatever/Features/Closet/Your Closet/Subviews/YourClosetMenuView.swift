@@ -13,6 +13,7 @@ import RxCocoa
 final class YourClosetMenuView: UIView, UICollectionViewDelegate,
     UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
+    // Create collection view with flow layout.
     lazy var collectionView: UICollectionView = {
         let flowLayout = UICollectionViewFlowLayout()
             flowLayout.scrollDirection = .horizontal

@@ -9,5 +9,6 @@
 import UIKit
 
 final class YourClosetMenuCollectionViewCell {
+    @IBOutlet weak var headerLabel: Caption2!
     
 }

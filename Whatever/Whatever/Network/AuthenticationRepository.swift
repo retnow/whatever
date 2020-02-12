@@ -101,4 +101,17 @@ class AuthenticationRepository {
             return Disposables.create()
         }
     }
+    
+    // MARK: Logout
+    public func logout() -> Completable {
+        return Completable.create { completable in
+            do {
+                try Auth.auth().signOut()
+                completable(.completed)
+            } catch let error {
+                completable(.error(error))
+            }
+            return Disposables.create()
+        }
+    }
 }

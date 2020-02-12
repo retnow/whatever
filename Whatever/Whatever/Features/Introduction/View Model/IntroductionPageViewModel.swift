@@ -11,9 +11,9 @@ import RxSwift
 import RxCocoa
 
 final class IntroductionPageViewModel {
-    let router: AnyRouter<AuthenticationRoute>
+    let router: UnownedRouter<AuthenticationRoute>
     
-    init(router: AnyRouter<AuthenticationRoute>) {
+    init(router: UnownedRouter<AuthenticationRoute>) {
         self.router = router
     }
     

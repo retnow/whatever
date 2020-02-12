@@ -14,14 +14,11 @@ enum ClosetRoute: Route {
 }
 
 final class ClosetCoordinator: NavigationCoordinator<ClosetRoute> {
-    internal override func generateRootViewController() -> UINavigationController {
-        let navigationController = NavigationController()
-        navigationController.navigationBar.prefersLargeTitles = true
-        return navigationController
-    }
-
     init() {
-        super.init(initialRoute: .yourCloset)
+        let nc = NavigationController()
+        super.init(
+            rootViewController: nc,
+            initialRoute: .yourCloset)
     }
 
     override func prepareTransition(

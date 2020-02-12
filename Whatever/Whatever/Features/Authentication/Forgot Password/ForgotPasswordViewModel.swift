@@ -13,11 +13,11 @@ import RxCocoa
 final class ForgotPasswordViewModel {
     private let disposeBag = DisposeBag()
     
-    private let router: AnyRouter<AuthenticationRoute>
+    private let router: UnownedRouter<AuthenticationRoute>
     private let authenticationService: AuthenticationService
     
     init(
-        router: AnyRouter<AuthenticationRoute>,
+        router: UnownedRouter<AuthenticationRoute>,
         authenticationService: AuthenticationService) {
         self.router = router
         self.authenticationService = authenticationService

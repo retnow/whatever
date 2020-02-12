@@ -7,12 +7,16 @@
 //
 
 import UIKit
-import RxSwift
-import RxCocoa
+
+extension String {
+    static let titleText = NSLocalizedString("verify_email_title", comment: "")
+    static let continueButtonTitleText = NSLocalizedString("verify_email_button", comment: "")
+    static func descriptionText(email: String) -> String {
+        return String.localizedStringWithFormat(NSLocalizedString("verify_email_message", comment: ""), email)
+    }
+}
 
 final class VerifyEmailViewController: AppViewController {
-    private let disposeBag = DisposeBag()
-    
     @IBOutlet weak var titleLabel: Heading2!
     @IBOutlet weak var messageLabel: Body!
     @IBOutlet weak var continueButton: PrimaryButton!
@@ -21,42 +25,24 @@ final class VerifyEmailViewController: AppViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
-        bindViewModel()
+        setup()
     }
     
-    private func setupUI() {
-        // String constants.
-        titleLabel.text = NSLocalizedString("verify_email_title", comment: "")
-
-        continueButton.setTitle(
-            NSLocalizedString("verify_email_button", comment: ""),
-            for: .normal)
+    private func setup() {
+        titleLabel.text = .titleText
+        
+        continueButton.setTitle(.continueButtonTitleText, for: .normal)
+        continueButton.addTarget(
+            self,
+            action: #selector(continuePressed),
+            for: .touchUpInside)
+        
+        messageLabel.setText(
+            to: String.descriptionText(email: viewModel?.email ?? ""),
+            withLineHeightMultiple: 1.25)
     }
-
-    private func bindViewModel() {
-        guard let viewModel = viewModel else { return }
-
-        continueButton.rx.tap
-            .subscribe(onNext: viewModel.continueSelected)
-            .disposed(by: disposeBag)
-
-        // Render screen when new view state is received.
-        viewModel.state
-            .subscribe(onNext: { [weak self] in self?.render($0) })
-            .disposed(by: disposeBag)
+    
+    @objc private func continuePressed() {
+        viewModel?.continueSelected()
     }
-
-    // Render correct elements depending on current state.
-    private func render(_ state: VerifyEmailViewState) {
-        switch state {
-        case .initial(let email):
-            messageLabel.setText(
-                to: String.localizedStringWithFormat(
-                    NSLocalizedString("verify_email_message", comment: ""),
-                    email),
-                withLineHeightMultiple: 1.25)
-        }
-    }
-
 }

@@ -18,13 +18,9 @@ enum MainRoute: Route {
 
 final class MainCoordinator: TabBarCoordinator<MainRoute> {
     private let outfit = UIViewController()
-    private let closet: AnyRouter<ClosetRoute>
+    private let closet = UIViewController()
     private let calendar = UIViewController()
     private let profile = UIViewController()
-
-    internal override func generateRootViewController() -> UITabBarController {
-        return TabBarController()
-    }
     
     init() {
         // TODO: Complete this with different routes when completed.
@@ -43,19 +39,19 @@ final class MainCoordinator: TabBarCoordinator<MainRoute> {
             "tab_bar_outfit_accessibility_label", comment: "")
 
         // Closet
-        let closetCoordinator = ClosetCoordinator()
-        closetCoordinator.rootViewController.tabBarItem = UITabBarItem(
+//        let closetCoordinator = ClosetCoordinator()
+        closet.tabBarItem = UITabBarItem(
             title: nil,
             image: UIImage(named: .tabBarCloset),
             tag: 1)
-        closetCoordinator.rootViewController.tabBarItem.imageInsets = UIEdgeInsets(
-            top: 3,
-            left: 0,
-            bottom: -3,
-            right: 0)
-        closetCoordinator.rootViewController.tabBarItem.accessibilityLabel = NSLocalizedString(
-            "tab_bar_calendar_accessibility_label", comment: "")
-        closet = closetCoordinator.anyRouter
+//        closetCoordinator.rootViewController.tabBarItem.imageInsets = UIEdgeInsets(
+//            top: 3,
+//            left: 0,
+//            bottom: -3,
+//            right: 0)
+//        closetCoordinator.rootViewController.tabBarItem.accessibilityLabel = NSLocalizedString(
+//            "tab_bar_calendar_accessibility_label", comment: "")
+//        closet = closetCoordinator.unownedRouter
 
         // Calendar
         calendar.view.backgroundColor = .white

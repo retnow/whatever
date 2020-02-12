@@ -7,15 +7,17 @@
 //
 
 import UIKit
-import RxSwift
-import RxCocoa
-import RxKeyboard
+
+extension String {
+    static let title = NSLocalizedString("forgot_password_title", comment: "")
+    static let description = NSLocalizedString("forgot_password_description", comment: "")
+    static let resetPassword = NSLocalizedString("forgot_password_reset", comment: "")
+    static let backToLogin =  NSLocalizedString("forgot_password_back", comment: "")
+}
 
 // TODO: Handle different view states depending on forgot password flow.
 
 final class ForgotPasswordViewController: AppViewController {
-    private let disposeBag = DisposeBag()
-
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var titleLabel: Heading2!
     @IBOutlet weak var descriptionLabel: Body!
@@ -28,50 +30,39 @@ final class ForgotPasswordViewController: AppViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        setupUI()
-        bindViewModel()
+        setup()
     }
 
-    private func setupUI() {
-        // Text fields
+    private func setup() {
         emailTextField.delegate = self
 
-        // Scroll view
-        RxKeyboard.instance.visibleHeight
-            .drive(onNext: { [weak self] visibleKeyboardHeight in
-                self?.scrollView.contentInset.bottom = visibleKeyboardHeight
-            })
-            .disposed(by: disposeBag)
-
-        // String constants
-        titleLabel.text = NSLocalizedString(
-            "forgot_password_title", comment: "")
+        titleLabel.text = .title
         descriptionLabel.setText(
-            to: NSLocalizedString("forgot_password_description", comment: ""),
-            withLineHeightMultiple: 1.25)
-        resetPasswordButton.setTitle(
-            NSLocalizedString("forgot_password_reset", comment: ""),
-            for: .normal)
-        backToLoginButton.setTitle(
-            NSLocalizedString("forgot_password_back", comment: ""),
-            for: .normal)
+            to: .description,
+            withLineHeightMultiple: CGFloat(Constants.Styling.bodyLineSpacing))
+        
+        resetPasswordButton.setTitle(.resetPassword, for: .normal)
+        resetPasswordButton.addTarget(
+            self,
+            action: #selector(resetPasswordPressed),
+            for: .touchUpInside)
+        
+        backToLoginButton.setTitle(.backToLogin, for: .normal)
+        backToLoginButton.addTarget(
+            self,
+            action: #selector(backToLoginPressed),
+            for: .touchUpInside)
     }
-
-    private func bindViewModel() {
-        guard let viewModel = viewModel else { return }
-
-        resetPasswordButton.rx.tap
-            .subscribe(onNext: { [weak self] in
-                guard let self = self else { return }
-                let email = self.emailTextField.text ?? ""
-                viewModel.resetPasswordSelected(email: email)
-            })
-            .disposed(by: disposeBag)
-
-        backToLoginButton.rx.tap
-            .subscribe(onNext: viewModel.backToLoginSelected)
-            .disposed(by: disposeBag)
+    
+    @objc
+    func resetPasswordPressed() {
+        let email = self.emailTextField.text ?? ""
+        viewModel?.resetPasswordSelected(email: email)
+    }
+    
+    @objc
+    func backToLoginPressed() {
+        viewModel?.backToLoginSelected()
     }
 }
 

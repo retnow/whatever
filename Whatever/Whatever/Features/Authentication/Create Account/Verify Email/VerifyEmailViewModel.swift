@@ -14,30 +14,31 @@ enum VerifyEmailViewState {
     case initial(email: String)
 }
 
+protocol VerifyEmailViewModelDelegate: class {
+    func verifyEmailViewStateDidUpdate(viewState: VerifyEmailViewState)
+}
+
 final class VerifyEmailViewModel {
     private let disposeBag = DisposeBag()
-
-    // Variable exposing view state.
-    lazy var state: Observable<VerifyEmailViewState> = self.stateSubject.asObservable()
-    private let stateSubject: BehaviorSubject<VerifyEmailViewState>
-
-    private let router: AnyRouter<AuthenticationRoute>
+    
+    let email: String
+    
+    private let router: UnownedRouter<AuthenticationRoute>
     private let authenticationService: AuthenticationService
 
     init(
         email: String,
-        router: AnyRouter<AuthenticationRoute>,
+        router: UnownedRouter<AuthenticationRoute>,
         authenticationService: AuthenticationService) {
-        self.stateSubject = BehaviorSubject<VerifyEmailViewState>(
-            value: .initial(email: email))
+        
+        self.email = email
         self.router = router
         self.authenticationService = authenticationService
     }
 
     func sendVerificationEmail() {
-        authenticationService.sendVerificationEmail()
+        _ = authenticationService.sendVerificationEmail()
             .subscribe()
-            .disposed(by: disposeBag)
     }
 
     func continueSelected() {

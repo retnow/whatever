@@ -14,23 +14,15 @@ import Firebase
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     let window: UIWindow! = UIWindow()
+    let router = AppCoordinator().strongRouter
     
-    let coordinator = AppCoordinator()
-    var router: AnyRouter<AppRoute> {
-        return coordinator.anyRouter
-    }
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Configure Firebase.
         FirebaseApp.configure()
         
         // Set root for coordinator.
         router.setRoot(for: window)
-        
-        for family in UIFont.familyNames.sorted() {
-            let names = UIFont.fontNames(forFamilyName: family)
-            print("Family: \(family) Font names: \(names)")
-        }
+    
         return true
     }
 
