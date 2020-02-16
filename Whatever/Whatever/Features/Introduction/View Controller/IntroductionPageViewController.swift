@@ -7,13 +7,20 @@
 //
 
 import UIKit
-import RxSwift
-import RxCocoa
 import SnapKit
 
+fileprivate extension String {
+    static let outfitTitleText = NSLocalizedString("introduction_outfit_title", comment: "")
+    static let outfitDescriptionText = NSLocalizedString("introduction_outfit_description", comment: "")
+    static let lifeTitleText = NSLocalizedString("introduction_life_title", comment: "")
+    static let lifeDescriptionText = NSLocalizedString("introduction_life_description", comment: "")
+    static let closetTitleText = NSLocalizedString("introduction_closet_title", comment: "")
+    static let closetDescriptionText = NSLocalizedString("introduction_closet_description", comment: "")
+    static let loginButtonTitleText = NSLocalizedString("login_action", comment: "")
+    static let createAccountButtonTitleText = NSLocalizedString("create_account_action", comment: "")
+}
+
 final class IntroductionPageViewController: UIPageViewController {
-    private let disposeBag = DisposeBag()
-    
     var viewModel: IntroductionPageViewModel?
     
     // UI elements
@@ -24,30 +31,32 @@ final class IntroductionPageViewController: UIPageViewController {
         viewControllers.append(IntroductionLogoViewController())
         
         viewControllers.append(IntroductionDescriptionViewController(
-            title: NSLocalizedString("introduction_outfit_title", comment: ""),
-            description: NSLocalizedString("introduction_outfit_description", comment: ""),
+            title: .outfitTitleText,
+            description: .outfitDescriptionText,
             image: UIImage(named: .introductionOutfit)))
         
         viewControllers.append(IntroductionDescriptionViewController(
-            title: NSLocalizedString("introduction_life_title", comment: ""),
-            description: NSLocalizedString("introduction_life_description", comment: ""),
+            title: .lifeTitleText,
+            description: .lifeDescriptionText,
             image: UIImage(named: .introductionLife)))
         
         viewControllers.append(IntroductionDescriptionViewController(
-            title: NSLocalizedString("introduction_closet_title", comment: ""),
-            description: NSLocalizedString("introduction_closet_description", comment: ""),
+            title: .closetTitleText,
+            description: .closetDescriptionText,
             image: UIImage(named: .introductionCloset)))
         
         return viewControllers
     }()
     
     // Initializers
-    override init(transitionStyle style: UIPageViewController.TransitionStyle,
-                  navigationOrientation: UIPageViewController.NavigationOrientation,
-                  options: [UIPageViewController.OptionsKey: Any]? = nil) {
-        super.init(transitionStyle: .scroll,
-                   navigationOrientation: .horizontal,
-                   options: nil)
+    override init(
+        transitionStyle style: UIPageViewController.TransitionStyle,
+        navigationOrientation: UIPageViewController.NavigationOrientation,
+        options: [UIPageViewController.OptionsKey: Any]? = nil) {
+        super.init(
+            transitionStyle: .scroll,
+            navigationOrientation: .horizontal,
+            options: nil)
     }
     
     required init?(coder: NSCoder) {
@@ -84,7 +93,11 @@ final class IntroductionPageViewController: UIPageViewController {
         }
         
         // Hide default back button text by making it an empty string.
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(
+            title: "",
+            style: .plain,
+            target: nil,
+            action: nil)
         
         // Background color
         view.backgroundColor = UIColor(named: .background)
@@ -117,7 +130,7 @@ final class IntroductionPageViewController: UIPageViewController {
         // Log in button
         view.addSubview(loginButton)
         loginButton.setTitle(
-            NSLocalizedString("login_action", comment: ""),
+            .loginButtonTitleText,
             for: .normal)
         loginButton.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(490)
@@ -128,7 +141,7 @@ final class IntroductionPageViewController: UIPageViewController {
         
         view.addSubview(createAccountButton)
         createAccountButton.setTitle(
-            NSLocalizedString("create_account_action", comment: ""),
+            .createAccountButtonTitleText,
             for: .normal)
         createAccountButton.snp.makeConstraints { make in
             make.top.equalTo(loginButton.snp.bottom).offset(16)
@@ -136,17 +149,16 @@ final class IntroductionPageViewController: UIPageViewController {
             make.trailing.equalToSuperview().offset(-32)
             make.height.equalTo(50)
         }
-        
-        // Bind buttons to view model.
-        guard let viewModel = viewModel else { return }
-        
-        loginButton.rx.tap
-            .subscribe(onNext: viewModel.loginWasSelected)
-            .disposed(by: disposeBag)
-        
-        createAccountButton.rx.tap
-            .subscribe(onNext: viewModel.createAccountWasSelected)
-            .disposed(by: disposeBag)
+    }
+    
+    @objc
+    func loginPressed() {
+        viewModel?.loginSelected()
+    }
+    
+    @objc
+    func createAccountPressed() {
+        viewModel?.createAccountSelected()
     }
 }
 

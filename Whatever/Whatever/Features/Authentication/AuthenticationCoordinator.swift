@@ -22,33 +22,34 @@ enum AuthenticationRoute: Route {
 class AuthenticationCoordinator: NavigationCoordinator<AuthenticationRoute> {
     private let disposeBag = DisposeBag()
 
-    override func generateRootViewController() -> UINavigationController {
-        return NavigationController()
-    }
-    
     init() {
-        super.init(initialRoute: .introduction)
+        let nc = NavigationController()
+        super.init(
+            rootViewController: nc,
+            initialRoute: .introduction)
     }
     
     override func prepareTransition(for route: AuthenticationRoute) -> NavigationTransition {
         switch route {
         case .introduction:
             let vc = IntroductionPageViewController()
-            let vm = IntroductionPageViewModel(router: anyRouter)
+            let vm = IntroductionPageViewModel(router: unownedRouter)
             vc.viewModel = vm
             return .show(vc)
             
         case .login:
             let vc = LoginViewController()
-            let vm = LoginViewModel(router: anyRouter)
+            let vm = LoginViewModel(
+                router: unownedRouter,
+                authenticationService: AppService.shared.authentication)
             vc.viewModel = vm
             return .push(vc)
         
         case .createAccount:
             let vc = CreateAccountViewController()
             let vm = CreateAccountViewModel(
-                router: anyRouter,
-                authenticationManager: AppManager.shared.authentication)
+                router: unownedRouter,
+                authenticationService: AppService.shared.authentication)
             vc.viewModel = vm
             return .push(vc)
             
@@ -56,16 +57,17 @@ class AuthenticationCoordinator: NavigationCoordinator<AuthenticationRoute> {
             let vc = VerifyEmailViewController()
             let vm = VerifyEmailViewModel(
                 email: email,
-                router: anyRouter,
-                authenticationManager: AppManager.shared.authentication)
+                router: unownedRouter,
+                authenticationService: AppService.shared.authentication)
             vc.viewModel = vm
             return .push(vc)
-        
+
+        // TODO: Present this flow modally (need a subcoordinator/router)?
         case .forgotPassword:
             let vc = ForgotPasswordViewController()
             let vm = ForgotPasswordViewModel(
-                router: anyRouter,
-                authenticationManager: AppManager.shared.authentication)
+                router: unownedRouter,
+                authenticationService: AppService.shared.authentication)
             vc.viewModel = vm
             return .push(vc)
             

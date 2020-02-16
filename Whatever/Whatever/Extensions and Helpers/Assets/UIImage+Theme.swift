@@ -20,11 +20,18 @@ extension UIImage {
         
         // Navigation bar
         case back
+        case filter
         
         // Introduction
         case introductionOutfit
         case introductionLife
         case introductionCloset
+
+        // Tab bar
+        case tabBarOutfit
+        case tabBarCloset
+        case tabBarCalendar
+        case tabBarProfile
     }
     
     /** Convenience initializer that returns force unwrapped UIImage for a theme given an enumerated image

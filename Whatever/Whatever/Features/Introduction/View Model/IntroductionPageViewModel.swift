@@ -11,18 +11,18 @@ import RxSwift
 import RxCocoa
 
 final class IntroductionPageViewModel {
-    let router: AnyRouter<AuthenticationRoute>
+    let router: UnownedRouter<AuthenticationRoute>
     
-    init(router: AnyRouter<AuthenticationRoute>) {
+    init(router: UnownedRouter<AuthenticationRoute>) {
         self.router = router
     }
     
     // TODO: Implement router trigger actions.
-    func loginWasSelected() {
+    func loginSelected() {
         router.trigger(.login)
     }
     
-    func createAccountWasSelected() {
+    func createAccountSelected() {
         router.trigger(.createAccount)
     }
 }

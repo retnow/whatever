@@ -9,6 +9,11 @@
 import Foundation
 
 enum Constants {
+    // TODO: Move this
+    enum Styling {
+        static let bodyLineSpacing = 1.25
+    }
+    
     enum Keychain {
         static let userEmail = "userEmail"
         static let PIN = "PIN"

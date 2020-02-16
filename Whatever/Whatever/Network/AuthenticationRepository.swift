@@ -2,7 +2,7 @@
 //  AuthenticationRepository.swift
 //  Whatever
 //
-//  Created by Widyanti, Retno (AU - Melbourne) on 12/9/19.
+//  Created by Retno Widyanti on 12/9/19.
 //  Copyright © 2019 Retno Widyanti. All rights reserved.
 //
 
@@ -96,6 +96,19 @@ class AuthenticationRepository {
                 guard let error = error else {
                     return completable(.completed)
                 }
+                completable(.error(error))
+            }
+            return Disposables.create()
+        }
+    }
+    
+    // MARK: Logout
+    public func logout() -> Completable {
+        return Completable.create { completable in
+            do {
+                try Auth.auth().signOut()
+                completable(.completed)
+            } catch let error {
                 completable(.error(error))
             }
             return Disposables.create()

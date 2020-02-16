@@ -17,6 +17,9 @@ class NavigationController: UINavigationController {
         navigationBar.titleTextAttributes = [
             .font: ScaledFont().font(forTextStyle: .caption1),
             .foregroundColor: UIColor(named: .text)]
+        navigationBar.largeTitleTextAttributes = [
+            .font: ScaledFont().font(forTextStyle: .title1),
+            .foregroundColor: UIColor(named: .text)]
         navigationBar.tintColor = UIColor(named: .text)
         navigationBar.isTranslucent = true
         navigationBar.setBackgroundImage(UIImage(), for: .default)

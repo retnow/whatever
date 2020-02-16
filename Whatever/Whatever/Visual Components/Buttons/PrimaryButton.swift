@@ -9,7 +9,6 @@
 import UIKit
 
 class PrimaryButton: UIButton {
-    
     private func setup() {
         // Title label
         titleLabel?.font = ScaledFont().font(forTextStyle: .callout)

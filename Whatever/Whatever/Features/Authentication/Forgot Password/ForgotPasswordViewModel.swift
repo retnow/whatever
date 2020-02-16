@@ -13,18 +13,18 @@ import RxCocoa
 final class ForgotPasswordViewModel {
     private let disposeBag = DisposeBag()
     
-    private let router: AnyRouter<AuthenticationRoute>
-    private let authenticationManager: AuthenticationManager
+    private let router: UnownedRouter<AuthenticationRoute>
+    private let authenticationService: AuthenticationService
     
     init(
-        router: AnyRouter<AuthenticationRoute>,
-        authenticationManager: AuthenticationManager) {
+        router: UnownedRouter<AuthenticationRoute>,
+        authenticationService: AuthenticationService) {
         self.router = router
-        self.authenticationManager = authenticationManager
+        self.authenticationService = authenticationService
     }
     
     func resetPasswordSelected(email: String) {
-        authenticationManager.sendPasswordReset(to: email)
+        authenticationService.sendPasswordReset(to: email)
             .subscribe()
             .disposed(by: disposeBag)
     }

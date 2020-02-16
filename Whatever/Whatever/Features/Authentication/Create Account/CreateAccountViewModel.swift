@@ -15,38 +15,43 @@ enum CreateAccountViewState {
     case error
 }
 
+protocol CreateAccountViewModelDelegate: class {
+    func createAccountViewStateDidUpdate(viewState: CreateAccountViewState)
+}
+
 final class CreateAccountViewModel {
     private let disposeBag = DisposeBag()
 
-    // Variable exposing view state.
-    lazy var state: Observable<CreateAccountViewState> = self.stateSubject.asObservable()
-    private let stateSubject = BehaviorSubject<CreateAccountViewState>(value: .initial)
-
-    private let router: AnyRouter<AuthenticationRoute>
-    private let authenticationManager: AuthenticationManager
+    var delegate: CreateAccountViewModelDelegate? {
+        didSet {
+            delegate?.createAccountViewStateDidUpdate(viewState: viewState)
+        }
+    }
+    
+    private var viewState: CreateAccountViewState = .initial {
+        didSet {
+            delegate?.createAccountViewStateDidUpdate(viewState: viewState)
+        }
+    }
+    
+    private let router: UnownedRouter<AuthenticationRoute>
+    private let authenticationService: AuthenticationService
 
     init(
-        router: AnyRouter<AuthenticationRoute>,
-        authenticationManager: AuthenticationManager) {
+        router: UnownedRouter<AuthenticationRoute>,
+        authenticationService: AuthenticationService) {
         self.router = router
-        self.authenticationManager = authenticationManager
+        self.authenticationService = authenticationService
     }
 
-    func createAccount(name: String, email: String, password: String) {
-        authenticationManager.createUser(
+    func createAccount(
+        name: String,
+        email: String,
+        password: String) {
+        _ = authenticationService.createUser(
             name: name,
             email: email,
             password: password)
-            .map { state -> CreateAccountViewState in
-                return .initial
-            }
-            .do(onSuccess: { [weak self] _ in
-                self?.router.trigger(.verifyEmail(email))
-            })
-            .catchErrorJustReturn(.error)
-            .asObservable()
-            .subscribe(stateSubject)
-            .disposed(by: disposeBag)
     }
 
     // MARK: Validation functions
