@@ -29,7 +29,7 @@ final class CreateAccountViewController: AppViewController {
     @IBOutlet weak var confirmPasswordTitleLabel: Caption2!
     @IBOutlet weak var confirmPasswordTextField: TextField!
     @IBOutlet weak var confirmPasswordValidationLabel: Label2!
-    @IBOutlet weak var createAccountButton: PrimaryButton!
+    @IBOutlet weak var createAccountButton: SecondaryButton!
 
     var viewModel: CreateAccountViewModel?
 

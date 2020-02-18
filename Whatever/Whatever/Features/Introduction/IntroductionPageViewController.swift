@@ -102,7 +102,47 @@ final class IntroductionPageViewController: UIPageViewController {
         // Background color
         view.backgroundColor = UIColor(named: .background)
         
-        setupButtons()
+        // Buttons
+        let loginButton = PrimaryButton()
+        let createAccountButton = SecondaryButton()
+        
+        view.addSubview(createAccountButton)
+        createAccountButton.setTitle(
+            .createAccountButtonTitleText,
+            for: .normal)
+        createAccountButton.snp.makeConstraints { make in
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottomMargin).offset(-48)
+            make.leading.equalToSuperview().offset(32)
+            make.trailing.equalToSuperview().offset(-32)
+            make.height.equalTo(50)
+        createAccountButton.addTarget(
+            self,
+            action: #selector(createAccountPressed),
+            for: .touchUpInside)
+        }
+        
+        view.addSubview(loginButton)
+        loginButton.setTitle(
+            .loginButtonTitleText,
+            for: .normal)
+        loginButton.snp.makeConstraints { make in
+            make.bottom.equalTo(createAccountButton.snp.top).offset(-16)
+            make.leading.equalToSuperview().offset(32)
+            make.trailing.equalToSuperview().offset(-32)
+            make.height.equalTo(50)
+        }
+        loginButton.addTarget(
+            self,
+            action: #selector(loginPressed),
+            for: .touchUpInside)
+        
+        // Page control
+        pageControl.snp.makeConstraints { make in
+            make.bottom.equalTo(loginButton.snp.top).offset(-20)
+            make.leading.equalToSuperview().offset(32)
+            make.trailing.equalToSuperview().offset(-32)
+            make.height.equalTo(15)
+        }
     }
     
     // MARK: Helper functions.
@@ -114,41 +154,6 @@ final class IntroductionPageViewController: UIPageViewController {
         pageControl.pageIndicatorTintColor = UIColor(named: .disabled)
         pageControl.currentPageIndicatorTintColor = UIColor(named: .text)
         view.addSubview(pageControl)
-        
-        pageControl.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(460)
-            make.leading.equalToSuperview().offset(32)
-            make.trailing.equalToSuperview().offset(-32)
-            make.height.equalTo(15)
-        }
-    }
-    
-    private func setupButtons() {
-        let loginButton = PrimaryButton()
-        let createAccountButton = SecondaryButton()
-        
-        // Log in button
-        view.addSubview(loginButton)
-        loginButton.setTitle(
-            .loginButtonTitleText,
-            for: .normal)
-        loginButton.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(490)
-            make.leading.equalToSuperview().offset(32)
-            make.trailing.equalToSuperview().offset(-32)
-            make.height.equalTo(50)
-        }
-        
-        view.addSubview(createAccountButton)
-        createAccountButton.setTitle(
-            .createAccountButtonTitleText,
-            for: .normal)
-        createAccountButton.snp.makeConstraints { make in
-            make.top.equalTo(loginButton.snp.bottom).offset(16)
-            make.leading.equalToSuperview().offset(32)
-            make.trailing.equalToSuperview().offset(-32)
-            make.height.equalTo(50)
-        }
     }
     
     @objc
